@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valko\\Downloads\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul.csproj": {}
+    "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\WorldOfZuul.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valko\\Downloads\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul.csproj": {
+    "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\WorldOfZuul.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valko\\Downloads\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul.csproj",
+        "projectUniqueName": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\WorldOfZuul.csproj",
         "projectName": "WorldOfZuul",
-        "projectPath": "C:\\Users\\valko\\Downloads\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul.csproj",
+        "projectPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\WorldOfZuul.csproj",
         "packagesPath": "C:\\Users\\valko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valko\\Downloads\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul\\obj\\",
+        "outputPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\valko\\AppData\\Roaming\\NuGet\\NuGet.Config"

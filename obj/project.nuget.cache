@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZtABRzjMQ80=",
+  "dgSpecHash": "3qjSoWdXcQE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\valko\\Downloads\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul\\WorldOfZuul.csproj",
+  "projectFilePath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\WorldOfZuul.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\valko\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.33\\microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
     "C:\\Users\\valko\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.33\\microsoft.windowsdesktop.app.ref.6.0.33.nupkg.sha512",
