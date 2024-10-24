@@ -1,6 +1,9 @@
 ﻿namespace WorldOfZuul.Maps;
 
-public class MapOceania
+public class MapOceania : Map
 {
-    
+    public override void DisplayMap()
+    {
+        throw new NotImplementedException();
+    }
 }
