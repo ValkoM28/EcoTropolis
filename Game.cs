@@ -1,4 +1,5 @@
 ﻿using static WorldOfZuul.Messages.Messages;
+using WorldOfZuul.CommandLogic;
 
 namespace WorldOfZuul
 {
@@ -43,37 +44,37 @@ namespace WorldOfZuul
 
         public void Play()
         {
-            Parser parser = new("main");
+            Parser parserMain = new("main");
+            Parser parserTravel = new("travel");
 
             PrintWelcome();
 
             bool continuePlaying = true;
-            
+            Command? command; 
             
             while (continuePlaying)
             {
-                Console.WriteLine(currentRoom?.Name);
+                Console.WriteLine(currentRoom?.Name); //rework
+                
                 Console.Write("> ");
 
                 string? input = Console.ReadLine();
-
-                if (string.IsNullOrEmpty(input))
-                {
-                    Console.WriteLine("Please enter a command.");
-                    continue;
+                switch (currentRoom?.Name) {
+                    case "Travel Menu":
+                        command = parserTravel.GetCommand(input);
+                        break;
+                    default:
+                        command = parserMain.GetCommand(input);
+                        break; 
                 }
-
-                Command? command = parser.GetCommand(input);
-
-                if (command == null)
-                {
+                
+                if (command == null) {
                     Console.WriteLine("I don't know that command.");
                     continue;
                 }
 
-                switch(command.Name)
-                {
-                    case "look":
+                switch(command.CommandType) {
+                    case "Travel Menu":
                         Console.WriteLine(currentRoom?.Description);
                         break;
                     /*

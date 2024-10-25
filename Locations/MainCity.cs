@@ -3,7 +3,8 @@
 namespace WorldOfZuul;
 
 public class MainCity : Room {
-    public string WelcomeMessage { get; set; }
+    //public string WelcomeMessage { get; set; }
+    //public string CityName { get; set; }
     
     public MainCity(string name, string description) : base(name, description) {
         
