@@ -1,9 +1,11 @@
-﻿namespace WorldOfZuul
+﻿using static WorldOfZuul.Messages.Messages;
+
+namespace WorldOfZuul
 {
     public class Game
     {
         private Room? currentRoom;
-        private Room? previousRoom;
+        //private Room? previousRoom; TODO: use this if we implement back command
         private readonly  string _mainCityName; 
 
         public Game(string cityName) {
@@ -14,6 +16,10 @@
         private void CreateRooms()
         {
             MainCity mainCity = new(_mainCityName, "Sample description" ); 
+            currentRoom = mainCity;
+            
+            
+            //TODO: Create locations here
             /*
             Room? outside = new("Outside", "You are standing outside the main entrance of the university. To the east is a large building, to the south is a computing lab, and to the west is the campus pub.");
             Room? theatre = new("Theatre", "You find yourself inside a large lecture theatre. Rows of seats ascend up to the back, and there's a podium at the front. It's quite dark and quiet.");
@@ -37,11 +43,13 @@
 
         public void Play()
         {
-            Parser parser = new();
+            Parser parser = new("main");
 
             PrintWelcome();
 
             bool continuePlaying = true;
+            
+            
             while (continuePlaying)
             {
                 Console.WriteLine(currentRoom?.Name);
@@ -68,13 +76,14 @@
                     case "look":
                         Console.WriteLine(currentRoom?.Description);
                         break;
-
+                    /*
                     case "back":
                         if (previousRoom == null)
                             Console.WriteLine("You can't go back from here!");
                         else
                             currentRoom = previousRoom;
                         break;
+                    */
 
                     case "north":
                     case "south":
@@ -104,7 +113,7 @@
         {
             if (currentRoom?.Exits.ContainsKey(direction) == true)
             {
-                previousRoom = currentRoom;
+                //previousRoom = currentRoom;  
                 currentRoom = currentRoom?.Exits[direction];
             }
             else
@@ -112,26 +121,21 @@
                 Console.WriteLine($"You can't go {direction}!");
             }
         }
-
+        
+        public bool Travel() {
+            DisplayMessage("travel");
+            return true; 
+        }
 
         private static void PrintWelcome()
         {
-            Console.WriteLine("Welcome to the World of Zuul!");
-            Console.WriteLine("World of Zuul is a new, incredibly boring adventure game.");
+            DisplayMessage("welcome");
             PrintHelp();
-            Console.WriteLine();
         }
 
         private static void PrintHelp()
         {
-            Console.WriteLine("You are lost. You are alone. You wander");
-            Console.WriteLine("around the university.");
-            Console.WriteLine();
-            Console.WriteLine("Navigate by typing 'north', 'south', 'east', or 'west'.");
-            Console.WriteLine("Type 'look' for more details.");
-            Console.WriteLine("Type 'back' to go to the previous room.");
-            Console.WriteLine("Type 'help' to print this message again.");
-            Console.WriteLine("Type 'quit' to exit the game.");
+            DisplayMessage("help");
         }
     }
 }

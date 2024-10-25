@@ -8,8 +8,14 @@ namespace WorldOfZuul
 {
     public class Parser
     {
-        private readonly CommandWords commandWords = new();
-
+        private readonly CommandWords commandWords; 
+        
+        // More efficient would be to use an int or short instead of a string, but we chose a string because it is a small program
+        public Parser(string parserType) {
+            commandWords = new CommandWords(parserType);
+        } 
+        
+        
         public Command? GetCommand(string inputLine)
         {
             string[] words = inputLine.Split();
