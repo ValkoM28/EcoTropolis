@@ -2,7 +2,7 @@
 
 public abstract class Map
 {
-    private string mapContents;
+    private string mapContent;
 
     public abstract void DisplayMap();
 

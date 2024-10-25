@@ -82,11 +82,8 @@ namespace WorldOfZuul
     {
         public static void Main()
         {
-            MapAfrica map = new MapAfrica(); 
-            map.DisplayMap();
-            //Game game = new();
-            //game.Play();
+            Game game = new();
+            game.Play();
         }
     }
 }
-

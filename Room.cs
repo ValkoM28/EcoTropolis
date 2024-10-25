@@ -14,16 +14,17 @@
 
         public void SetExits(Room? north, Room? east, Room? south, Room? west)
         {
-            SetExit("north", north);
-            SetExit("east", east);
-            SetExit("south", south);
-            SetExit("west", west);
+            //TODO: Movement within the location
+            //SetExit("north", north);
+            //SetExit("east", east);
+            //SetExit("south", south);
+            //SetExit("west", west);
         }
 
         public void SetExit(string direction, Room? neighbor)
         {
-            if (neighbor != null)
-                Exits[direction] = neighbor;
+            //if (neighbor != null)
+                //Exits[direction] = neighbor;
         }
     }
 }
