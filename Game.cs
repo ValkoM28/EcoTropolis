@@ -4,15 +4,17 @@
     {
         private Room? currentRoom;
         private Room? previousRoom;
+        private readonly  string _mainCityName; 
 
-        public Game()
-        {
+        public Game(string cityName) {
+            _mainCityName = cityName;
             CreateRooms();
         }
 
         private void CreateRooms()
         {
-  
+            MainCity mainCity = new(_mainCityName, "Sample description" ); 
+            /*
             Room? outside = new("Outside", "You are standing outside the main entrance of the university. To the east is a large building, to the south is a computing lab, and to the west is the campus pub.");
             Room? theatre = new("Theatre", "You find yourself inside a large lecture theatre. Rows of seats ascend up to the back, and there's a podium at the front. It's quite dark and quiet.");
             Room? pub = new("Pub", "You've entered the campus pub. It's a cozy place, with a few students chatting over drinks. There's a bar near you and some pool tables at the far end.");
@@ -30,6 +32,7 @@
             office.SetExit("west", lab);
 
             currentRoom = outside;
+            */
         }
 
         public void Play()
@@ -41,7 +44,7 @@
             bool continuePlaying = true;
             while (continuePlaying)
             {
-                Console.WriteLine(currentRoom?.ShortDescription);
+                Console.WriteLine(currentRoom?.Name);
                 Console.Write("> ");
 
                 string? input = Console.ReadLine();
@@ -63,7 +66,7 @@
                 switch(command.Name)
                 {
                     case "look":
-                        Console.WriteLine(currentRoom?.LongDescription);
+                        Console.WriteLine(currentRoom?.Description);
                         break;
 
                     case "back":
