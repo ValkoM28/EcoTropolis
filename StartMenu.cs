@@ -1,16 +1,18 @@
 ﻿using WorldOfZuul.Maps;
 
+using static WorldOfZuul.Messages.Messages;
+
 namespace WorldOfZuul;
 
-public class StartMenu {
-    public string StartMessage = "Test Message";
-    
+public class StartMenu
+{
+    public string CityName { get; private set; } = null;  
     
     public StartMenu() {
         MapWorld worldMap = new();
         worldMap.DisplayMap();
-        
-        Console.WriteLine(StartMessage);
+
+        DisplayMessage("start"); 
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
         
@@ -19,11 +21,13 @@ public class StartMenu {
         Console.WriteLine("Please name your city and press enter:");
 
         // Read the user's input from the console
-        string cityName = Console.ReadLine();
+        CityName = Console.ReadLine(); 
         
+        while (string.IsNullOrEmpty(CityName)) {
+            DisplayMessage("invalid_city_name");
+            CityName = Console.ReadLine(); 
+        }
         
-        Game game = new(cityName);
-        game.Play();
     }
     
 

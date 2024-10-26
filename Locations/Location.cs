@@ -1,19 +1,24 @@
 ﻿using System.ComponentModel;
+using static WorldOfZuul.Messages.Messages;
+using WorldOfZuul. InventorySystem;
 
-namespace WorldOfZuul;
 
-public class Location : Room {
+namespace WorldOfZuul.Locations;
 
-    public Location(string name, string description) : base(name, description) {
-        throw new NotImplementedException();
+public abstract class Location {
+    public string Name { get; }
+    public HappinessIndicator HappinessIndicator; 
+    
+    //public Dictionary<string, Location> Exits { get; }
+    
+    protected Location(string name) {
+        Name = name;
     }
 
-    public override void ToMainMenu() {
-        throw new NotImplementedException();
-    }
 
-    public override void ShowDescription() {
-        throw new NotImplementedException();
-    }
+    public abstract void ToMainMenu();
+    public abstract void ShowDescription(); 
+
+    
 
 }

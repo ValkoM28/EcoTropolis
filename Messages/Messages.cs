@@ -1,22 +1,49 @@
-﻿namespace WorldOfZuul.Messages;
+﻿using WorldOfZuul.InventorySystem;
+
+
+namespace WorldOfZuul.Messages;
 
 public static class Messages {
 
     public static void DisplayMessage(string messageType) {
         switch (messageType) {
             case "help":
-                printHelpMessage();
+                PrintHelpMessage();
                 break; 
             case "welcome": 
-                printWelcomeMessage();
+                PrintWelcomeMessage();
                 break; 
             case "travel": 
-                printTravelMessage();
+                PrintTravelMessage();
+                break;
+            case "start": 
+                PrintStartMessage();
+                break;
+            case "invalid_command": 
+                PrintInvalidCommandMessage();
+                break;
+            case "invalid_city_name": 
+                PrintInvalidNameMessage();
                 break;
         }
     }
 
-    private static void printHelpMessage() {
+    public static void DisplayDescription(string roomName) {
+        switch (roomName) {
+            case "main_city":
+                PrintMainCityDesc();
+                break;
+            
+        }
+    }
+
+    
+    public static void DisplayHappinessLevel(HappinessIndicator happinessIndicator)
+    {
+        throw new NotImplementedException(); 
+    }
+
+    private static void PrintHelpMessage() {
         Console.WriteLine("You are lost. You are alone. You wander");
         Console.WriteLine("around the university.");
         Console.WriteLine();
@@ -27,12 +54,29 @@ public static class Messages {
         Console.WriteLine("Type 'quit' to exit the game.");
     }
 
-    private static void printWelcomeMessage() {
+    private static void PrintWelcomeMessage() {
         Console.WriteLine("Welcome message - please implement!!!!!!!!!!!!!!!!");
     }
 
-    private static void printTravelMessage() {
+    private static void PrintTravelMessage() {
         Console.WriteLine("Travel message - please implement!!!!!!!!!!!!!!!!");
+    }
+
+    private static void PrintStartMessage() {
+        Console.WriteLine("Start message - please implement!!!!!!!!!!!!!!!!");
+    }
+
+    private static void PrintInvalidCommandMessage() {
+        Console.WriteLine("Invalid command message - please implement!!!!!!!!!!!!!!!!");
+    }
+
+    private static void PrintInvalidNameMessage()
+    {
+        Console.WriteLine("Invalid city name message - please implement!!!!!!!!!!!!!!!!"); 
+    }
+
+    private static void PrintMainCityDesc() {
+        Console.WriteLine("Main City Message - please implement!!!!!!!!!!!!!!!!");
     }
 
 
