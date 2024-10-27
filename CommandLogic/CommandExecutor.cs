@@ -3,46 +3,52 @@ using static Messages.Messages;
 
 public class CommandExecutor {
      //TODO: check if it is a naming convention
-    
+     
     public bool Execute(Command command, Player player) {
         if (command == null) {
             return false; 
         }
         
         switch (command.CommandType) {
-            case "Travel Menu":
-                return ExecuteTravel(command.Name, player);
+            case "travel":
+                return ExecuteTravel(command.Name, player, command.GameInstance);
             default:
-                return ExecuteMain(command.Name, player);
+                return ExecuteMain(command.Name, player, command.GameInstance);
         }
     }
 
-    private bool ExecuteMain(string commandName, Player player) {
-        switch (commandName) {
+    private bool ExecuteMain(string commandName, Player player, Game gameInstance) {
+        switch (commandName.ToLower()) {
             case "travel":
-                throw new NotImplementedException();
+                DisplayMessage("travel");
+                gameInstance.ChangeCurrentLocation(gameInstance.TravelMenu); 
+                break; 
             case "build":
                 throw new NotImplementedException();
             case "help":
                 DisplayMessage("help");
-                return true;
+                break;
             case "menu":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.MainCity);
+                break; 
             case "quit":
-                throw new NotImplementedException();
+                gameInstance.EndGame();
+                break; 
             case "look":
-                throw new NotImplementedException();
+                gameInstance.CurrentRoom.ShowDescription();
+                break;
             case "inventory":
                 player.ShowInventory();
-                return true; 
+                break; 
             default:
                 return false;
         }
+        return true; 
     }
 
 
-    private bool ExecuteTravel(string commandName, Player player) {
-        switch (commandName) {
+    private bool ExecuteTravel(string commandName, Player player, Game gameInstance) {
+        switch (commandName.ToLower()) {
             case "0":
                 throw new NotImplementedException();
             case "1":
@@ -60,10 +66,15 @@ public class CommandExecutor {
             case "7":
                 throw new NotImplementedException();
             case "back":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.MainCity);
+                break;
+            case "help": 
+                DisplayMessage("help_travel");
+                break; 
             default:
                 return false;
         }
+        return true;
     }
 }
         

@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel;
 using static WorldOfZuul.Messages.Messages;
-using WorldOfZuul. InventorySystem;
+using WorldOfZuul.InventorySystem;
 
 
 namespace WorldOfZuul.Locations;
 
 public abstract class Location {
     public string Name { get; }
-    public HappinessIndicator HappinessIndicator; 
+    public HappinessIndicator HappinessIndicator;
+    public NPC npc; 
+    
     
     //public Dictionary<string, Location> Exits { get; }
     
@@ -15,7 +17,7 @@ public abstract class Location {
         Name = name;
     }
 
-
+    public abstract void DisplayStartMessage(); 
     public abstract void ToMainMenu();
     public abstract void ShowDescription(); 
 

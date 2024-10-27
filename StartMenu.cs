@@ -16,12 +16,14 @@ public class StartMenu
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
         
-        Console.WriteLine("\n");
+        Console.WriteLine("\n----------\n");
             
         Console.WriteLine("Please name your city and press enter:");
-
+        Console.Write("> ");
         // Read the user's input from the console
         CityName = Console.ReadLine(); 
+        
+        Console.WriteLine("\n----------\n");
         
         while (string.IsNullOrEmpty(CityName)) {
             DisplayMessage("invalid_city_name");

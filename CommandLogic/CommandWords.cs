@@ -9,7 +9,7 @@ namespace WorldOfZuul.CommandLogic;
 
 public class CommandWords {
     private string[] validCommandsCity { get; } = ["travel", "build", "help", "menu", "quit", "look", "inventory"];
-    private string[] validCommandsTravel { get; } = [ "0", "1", "2", "3", "4", "5", "6", "7", "back" ];
+    private string[] validCommandsTravel { get; } = [ "0", "1", "2", "3", "4", "5", "6", "7", "back", "help" ];
 
     public string[] ValidCommands; 
     //public List<string> ValidCommandsRole { get; } = new List<string> { };

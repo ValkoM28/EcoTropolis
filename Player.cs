@@ -5,12 +5,10 @@ using WorldOfZuul.InventorySystem;
 
 public class Player {
     public Inventory Inventory { get; private set; }
-    public MainCity MainCity { get; private set; }
     
     
-    public Player(Inventory inventory, MainCity mainCity) {
+    public Player(Inventory inventory) {
         Inventory = inventory;
-        MainCity = mainCity; 
     }
 
     public void ShowInventory() {

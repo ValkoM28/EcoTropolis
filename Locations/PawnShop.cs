@@ -9,7 +9,10 @@ public class PawnShop : Location {
     public PawnShop(string name) : base(name) {
     }
 
-
+    public override void DisplayStartMessage()
+    {
+        
+    }
     public override void ToMainMenu()
     {
         throw new NotImplementedException();
