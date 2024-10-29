@@ -75,7 +75,6 @@ to maintain modularity, extensibility, and maintainability.
 
 */
 
-using EcoTropolis.Maps; 
 namespace EcoTropolis; 
 
 public class Program {

@@ -83,11 +83,13 @@ public class CommandExecutor {
         switch (command.Name.ToLower()) {
             case "buy":
                 gameInstance.PawnShop.BuyItem(command.SecondWord, player);
+                Console.WriteLine("here");
                 break; 
             case "sell":
                 throw new NotImplementedException();
             case "back":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.TravelMenu);
+                break;
             case "look":
                 throw new NotImplementedException();
             case "help":
