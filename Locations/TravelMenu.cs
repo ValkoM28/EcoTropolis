@@ -11,18 +11,24 @@ public class TravelMenu : Location {
     }
 
     public override void DisplayStartMessage() {
-        Console.WriteLine("Welcome to the travel menu: \n" +
-                          "Pick the location of your next journey\n" +
-                          "Or type \"back\" to go back to your city\n" +
-                          "If you want to learn more about the specific location, type \"Look [number]\"\n" +
-                          "If you need help, type \"help\"\n" +
-                          "1 - Location 1\n" +
-                          "2 - Location 1\n" +
-                          "3 - Location 1\n" +
-                          "4 - Location 1\n" +
-                          "5 - Location 1\n" +
-                          "6 - Location 1\n" +
-                          "0 - Pawn Shop");
+        
+
+        string welcome = """
+                         Welcome to the travel menu:  
+                         Pick the location of your next journey
+                         Or type "back" to go back to your city
+                         If you want to learn more about the specific location, type "Look [number]"
+                         If you need help, type "help"
+                         1 - Location 1
+                         2 - Location 1
+                         3 - Location 1
+                         4 - Location 1
+                         5 - Location 1
+                         6 - Location 1
+                         0 - Pawn Shop
+                         """;
+        
+        Console.WriteLine(welcome);
     }
 
     public override void ToMainMenu() {

@@ -58,45 +58,58 @@ public class Game {
         Player player = new(new Inventory()); //Player class that is used in command executions for now, might be used in a different way or eliminated completely TODO: decide the faith of the Player class
         //takes Inventory as its only parameter
         
-        CommandExecutor commandExecutor = new();  
-        Command command; 
+        CommandExecutor commandExecutor = new();  //Creates a new CommandExecutor object, with one public method Execute()
+                                                  //This method takes Command and Player objects as arguments and returns true if the command is executed successfully
+        Command command; //placeholder for a local variable command
         
-        DisplayMessage("welcome", MainCity.Name);
+        DisplayMessage("welcome", MainCity.Name);  //Displaying the welcome message //TODO: this is not ideal, needs a rework
         DisplayMessage("help");
 
-        _continuePlaying = true;
+        _continuePlaying = true; //variable used for killing the game
 
-        while (_continuePlaying)
-        {
-            Console.WriteLine("\n----------\n");
-            CurrentRoom.DisplayStartMessage(); 
+        /*
+         * This is the main loop of the game, that is responsible for handling inputs from the player.
+         * It is instantiated automatically with the method Play() and is broken when the variable _continuePlaying is set to false by EndGame() method.
+         */
+        while (_continuePlaying){
+            Console.WriteLine("\n----------\n");  
+            CurrentRoom.DisplayStartMessage();  //Displays the starting message/description of the current location
             
-            Console.Write("> ");
+            Console.Write("> ");  //just for formatting
 
-            string? input = Console.ReadLine();
+            string? input = Console.ReadLine(); //takes the input from the user
             
-            switch (CurrentRoom.GetType()) {
+            /*
+             * This switch statement checks the instance of the CurrentRoom field(variable) and uses associated parser to execute the command
+             */
+            switch (CurrentRoom.GetType()) {  
                 case Type t when t == typeof(TravelMenu):
-                    //Console.WriteLine(t);
-                    //Console.WriteLine(typeof(TravelMenu));
                     command = parserTravel.GetCommand(input);
                     break;
                 default:
                     command = parserMain.GetCommand(input);
                     break; 
             }
-
+            
+            /*
+             * commandExecutor.Execute() returns value true, when the command was valid and false, when it was not,
+             * if the command is not valid, print the invalid command message and try again.
+             */
             if (!commandExecutor.Execute(command, player)) {
                 DisplayMessage("invalid_command");
                 Console.ReadKey();
                 continue; 
             }
-            
+            //TODO: I dont know, if we  need anything here, but we should check.
         }
 
-        DisplayMessage("game_end");
+        DisplayMessage("game_end");  //After the game was ended and the while loop is terminated, prints a message.
     }
 
+    
+    /*
+     * Public method that just terminates the while loop in the Play() method.
+     */
     public void EndGame() {
         _continuePlaying = false; 
     }
