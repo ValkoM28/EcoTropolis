@@ -71,32 +71,38 @@ public static class Messages
                           "In case you need any help, type \"Help\"" );
     }
 
-    private static void PrintTravelMessage()
+    private static void PrintTravelMessage() // travel message
     {
         Console.WriteLine("Travel message - please implement!!!!!!!!!!!!!!!!");
     }
 
-    private static void PrintStartMessage()
+    private static void PrintStartMessage() // start message
     {
-        Console.WriteLine("Start message - please implement!!!!!!!!!!!!!!!!");
+        Console.WriteLine("Welcome to Ecotropolis – the city-building adventure where your decisions shape the future!\n\n" +
+                        "As a visionary leader, you'll travel to different cities, taking on roles like mayor, corporate CEO, or urban planner.\n" +
+                        "Each city faces unique environmental and urban challenges that only you can solve.\n" +
+                        "Complete quests to earn rewards that you can use to design and build your own perfect, sustainable city.\n" +
+                        "Can you balance progress with preservation and create a thriving, green metropolis?\n" +
+                        "The fate of Ecotropolis is in your hands!\n");
+              
     }
 
-    private static void PrintInvalidCommandMessage()
+    private static void PrintInvalidCommandMessage() // invalid command message
     {
         Console.WriteLine("Invalid command message - please implement!!!!!!!!!!!!!!!!");
     }
 
-    private static void PrintInvalidNameMessage()
+    private static void PrintInvalidNameMessage() // invalid city name message
     {
         Console.WriteLine("Invalid city name message - please implement!!!!!!!!!!!!!!!!");
     }
 
-    private static void PrintMainCityDesc()
+    private static void PrintMainCityDesc() //main city message
     {
         Console.WriteLine("Main City Message - please implement!!!!!!!!!!!!!!!!");
     }
 
-    public static void PrintEndMessage()
+    public static void PrintEndMessage() //end of game message
     {
         Console.WriteLine("End of game Message - please implement!!!!!!!!!!!!!!!!");
     }
