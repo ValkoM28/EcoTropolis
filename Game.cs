@@ -40,7 +40,7 @@ public class Game {
         TravelMenu = new TravelMenu();
         PawnShop = new PawnShop(); 
         
-        CurrentRoom = MainCity;
+        CurrentRoom = TravelMenu;
         
         
         //TODO: Create locations here
