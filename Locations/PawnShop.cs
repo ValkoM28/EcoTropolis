@@ -31,7 +31,10 @@ public class PawnShop : Location
     {
         throw new NotImplementedException();
     }
-
+    public override void Play()
+    {
+        
+    }
     public bool BuyItem(string numberString, Player player)
     {
         if (short.TryParse(numberString, out short numberShort) && numberShort <= itemsAvailable.Count)

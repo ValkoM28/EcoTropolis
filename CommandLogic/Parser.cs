@@ -1,14 +1,13 @@
 ﻿namespace EcoTropolis.CommandLogic; 
 
 public class Parser {
-    private readonly CommandWords? _commandWords;
+    private readonly string[] _commandWords;
     private string _parserType;
     private Game _gameInstance; 
     
     // More efficient would be to use an int or short instead of a string, but we chose a string because it is a small program
-    public Parser(string parserType, Game game) {
-        _commandWords = new CommandWords(parserType);
-        _parserType = parserType;
+    public Parser(string[] commandWords, Game game) {
+        _commandWords = commandWords;
         _gameInstance = game; 
 
     } 
@@ -21,7 +20,7 @@ public class Parser {
         
         string[] words = inputLine.Split(" ");
 
-        if (!_commandWords.IsValidCommand(words[0])) {
+        if (IsValidCommand(words[0])) {
             return null;
         }
         
@@ -30,6 +29,11 @@ public class Parser {
         } 
 
         return new Command(_gameInstance, words[0], commandType: _parserType);  //TODO: check if that even works, correct syntax?
+    }
+
+    public bool IsValidCommand(string input)
+    {
+        return _commandWords.Contains(input); 
     }
 }
     

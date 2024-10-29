@@ -9,7 +9,10 @@ public class TravelMenu : Location {
     public TravelMenu() : base("Travel Menu") {
         
     }
-
+    public override void Play()
+    {
+        
+    }
     public override void DisplayStartMessage() {
         
 

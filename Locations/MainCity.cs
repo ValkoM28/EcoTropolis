@@ -18,6 +18,11 @@ public class MainCity : Location {
                           "Type \"Help\" to see additional commands ");
     }
 
+    public override void Play()
+    {
+        
+    }
+
     public override void ShowDescription() {
         DisplayMessage("main_city");
     }

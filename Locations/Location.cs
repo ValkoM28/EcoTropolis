@@ -6,8 +6,6 @@ namespace EcoTropolis.Locations;
 
 public abstract class Location {
     public string Name { get; }
-    public HappinessIndicator HappinessIndicator;
-    public NPC npc; 
     
     
     //public Dictionary<string, Location> Exits { get; }
@@ -17,8 +15,9 @@ public abstract class Location {
     }
 
     public abstract void DisplayStartMessage(); 
-    public abstract void ShowDescription(); 
+    public abstract void ShowDescription();
+    public abstract void Play(); 
 
-    
+
 
 }
