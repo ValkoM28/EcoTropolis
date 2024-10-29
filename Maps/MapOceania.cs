@@ -1,4 +1,4 @@
-﻿namespace WorldOfZuul.Maps;
+﻿namespace EcoTropolis.Maps;
 
 public class MapOceania : Map
 {
