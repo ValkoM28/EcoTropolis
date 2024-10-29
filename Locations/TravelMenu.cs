@@ -1,5 +1,5 @@
-﻿using static WorldOfZuul.Messages.Messages;
-namespace WorldOfZuul.Locations;
+﻿using static EcoTropolis.Messages.Messages;
+namespace EcoTropolis.Locations;
 
 public class TravelMenu : Location {
     
@@ -30,10 +30,7 @@ public class TravelMenu : Location {
         
         Console.WriteLine(welcome);
     }
-
-    public override void ToMainMenu() {
-        throw new NotImplementedException();
-    }
+    
 
     public override void ShowDescription() {
         throw new NotImplementedException();

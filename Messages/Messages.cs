@@ -1,7 +1,7 @@
-﻿using WorldOfZuul.InventorySystem;
+﻿using EcoTropolis.InventorySystem;
 
 
-namespace WorldOfZuul.Messages;
+namespace EcoTropolis.Messages;
 
 public static class Messages
 {

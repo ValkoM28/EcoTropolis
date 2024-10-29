@@ -1,8 +1,7 @@
-﻿using WorldOfZuul.Maps;
+﻿using EcoTropolis.Maps;
+using static EcoTropolis.Messages.Messages;
 
-using static WorldOfZuul.Messages.Messages;
-
-namespace WorldOfZuul;
+namespace EcoTropolis;
 
 public class StartMenu
 {

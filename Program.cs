@@ -75,8 +75,8 @@ to maintain modularity, extensibility, and maintainability.
 
 */
 
-using WorldOfZuul.Maps; 
-namespace WorldOfZuul; 
+using EcoTropolis.Maps; 
+namespace EcoTropolis; 
 
 public class Program {
     public static void Main() {

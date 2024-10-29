@@ -1,9 +1,8 @@
-﻿using System.ComponentModel;
-using static WorldOfZuul.Messages.Messages;
-using WorldOfZuul.InventorySystem;
+﻿using EcoTropolis.InventorySystem;
+using static EcoTropolis.Messages.Messages;
 
 
-namespace WorldOfZuul.Locations;
+namespace EcoTropolis.Locations;
 
 public abstract class Location {
     public string Name { get; }
@@ -18,7 +17,6 @@ public abstract class Location {
     }
 
     public abstract void DisplayStartMessage(); 
-    public abstract void ToMainMenu();
     public abstract void ShowDescription(); 
 
     

@@ -1,7 +1,8 @@
-﻿using WorldOfZuul.Locations;
+﻿using EcoTropolis.InventorySystem;
+using EcoTropolis.Locations;
 
-namespace WorldOfZuul;
-using WorldOfZuul.InventorySystem;
+namespace EcoTropolis;
+using EcoTropolis.InventorySystem;
 
 public class Player {
     public Inventory Inventory { get; private set; }

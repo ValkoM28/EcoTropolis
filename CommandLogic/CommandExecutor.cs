@@ -1,5 +1,5 @@
-﻿namespace WorldOfZuul.CommandLogic;
-using static Messages.Messages; 
+﻿namespace EcoTropolis.CommandLogic;
+using static EcoTropolis.Messages.Messages; 
 
 public class CommandExecutor {
      //TODO: check if it is a naming convention
@@ -12,6 +12,8 @@ public class CommandExecutor {
         switch (command.CommandType) {
             case "travel":
                 return ExecuteTravel(command.Name, player, command.GameInstance);
+            case "pawn_shop":
+                return ExecuteShop(command, player, command.GameInstance); 
             default:
                 return ExecuteMain(command.Name, player, command.GameInstance);
         }
@@ -50,7 +52,8 @@ public class CommandExecutor {
     private bool ExecuteTravel(string commandName, Player player, Game gameInstance) {
         switch (commandName.ToLower()) {
             case "0":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.PawnShop);
+                break; 
             case "1":
                 throw new NotImplementedException();
             case "2":
@@ -75,6 +78,25 @@ public class CommandExecutor {
                 return false;
         }
         return true;
+    }
+    private bool ExecuteShop(Command command, Player player, Game gameInstance) {
+        switch (command.Name.ToLower()) {
+            case "buy":
+                gameInstance.PawnShop.BuyItem(command.SecondWord, player);
+                break; 
+            case "sell":
+                throw new NotImplementedException();
+            case "back":
+                throw new NotImplementedException();
+            case "look":
+                throw new NotImplementedException();
+            case "help":
+                throw new NotImplementedException();
+            default:
+                return false; 
+        }
+        return true; 
+
     }
 }
         

@@ -1,7 +1,6 @@
-﻿using System.Net.NetworkInformation;
-using WorldOfZuul.InventorySystem;
+﻿using EcoTropolis.InventorySystem;
 
-namespace WorldOfZuul.Locations;
+namespace EcoTropolis.Locations;
 
 public class SampleSpecificLocation : Location
 {
@@ -17,11 +16,8 @@ public class SampleSpecificLocation : Location
     public override void DisplayStartMessage()
     {
         
-    }
-    public override void ToMainMenu()
-    {
-        throw new NotImplementedException(); 
-    }
+    } 
+
     public override void ShowDescription() {
         throw new NotImplementedException(); 
     }

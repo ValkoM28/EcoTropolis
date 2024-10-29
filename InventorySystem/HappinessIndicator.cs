@@ -1,6 +1,6 @@
-﻿using static WorldOfZuul.Messages.Messages;
+﻿using static EcoTropolis.Messages.Messages;
 
-namespace WorldOfZuul.InventorySystem;
+namespace EcoTropolis.InventorySystem;
 
 public class HappinessIndicator {
     public double HappinessLevel { get; private set; }

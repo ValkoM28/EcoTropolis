@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj",
-      "projectName": "WorldOfZuul",
-      "projectPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj",
+      "projectUniqueName": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
+      "projectName": "EcoTropolis",
+      "projectPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
       "packagesPath": "C:\\Users\\valko\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\obj\\",
       "projectStyle": "PackageReference",

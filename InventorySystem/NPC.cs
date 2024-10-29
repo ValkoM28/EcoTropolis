@@ -1,4 +1,4 @@
-﻿namespace WorldOfZuul.InventorySystem;
+﻿namespace EcoTropolis.InventorySystem;
 
 public class NPC : Item {
                                                 
@@ -6,13 +6,5 @@ public class NPC : Item {
     public NPC(string name, string desription, string usage) : base(name, desription, usage) {
     }
 
-    public override bool Use()
-    {
-        throw new NotImplementedException(); 
-    }
 
-    public override void Sell()
-    {
-        throw new NotImplementedException(); 
-    } 
 } 

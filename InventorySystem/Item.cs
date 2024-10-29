@@ -1,6 +1,6 @@
-﻿namespace WorldOfZuul.InventorySystem;
+﻿namespace EcoTropolis.InventorySystem;
 
-public abstract class Item {
+public class Item {
     public string Name { get; private set; }
     public string Desription { get; private set; }
     public string Usage { get; private set;  }  //Maybe not necessary, we might use that field to
@@ -12,8 +12,5 @@ public abstract class Item {
         Desription = desription;
         Usage = usage; 
     }
-
-    public abstract bool Use();
-    public abstract void Sell(); 
 
 }
