@@ -40,8 +40,7 @@ public class Game {
         TravelMenu = new TravelMenu();
         PawnShop = new PawnShop(); 
         
-        
-        CurrentRoom = MainCity;
+        CurrentRoom = TravelMenu;
         
         
         //TODO: Create locations here
@@ -55,34 +54,24 @@ public class Game {
     }
 
 
-    public void Play()
-    {
+    public void Play() {
         /* Main game loop
          * Used variables: */
-        string[] validCommandsCity = ["travel", "build", "help", "menu", "quit", "look", "inventory"];
-        string[] validCommandsTravel = ["0", "1", "2", "3", "4", "5", "6", "7", "back", "help"];
-        string[] validCommandsShop = ["buy", "sell", "back", "look", "help"];
-
-        Parser parserMain = new(validCommandsCity, this); //parser for handling commands in the main menu
-        Parser parserTravel = new(validCommandsTravel, this); //parser for handling commands in the travel menu
-        Parser parserPawnShop = new(validCommandsShop, this); //parser for handling commands in the pawn shop
+        Parser parserMain = new("main", this);  //parser for handling commands in the main menu
+        Parser parserTravel = new("travel", this); //parser for handling commands in the travel menu
+        Parser parserPawnShop = new("pawn_shop", this); //parser for handling commands in the pawn shop
         //every Parser takes string as a differentiating parameter and instance of the Game class
         //using another data type to differentiate between the parsers would be more adequate, but it does not matter much on such a small scale. 
         //TODO:Implement parsers for other locations
-
-        Player
-            player = new(
-                new Inventory(
-                    this)); //Player class that is used in command executions for now, might be used in a different way or eliminated completely TODO: decide the faith of the Player class
+        
+        Player player = new(new Inventory(this)); //Player class that is used in command executions for now, might be used in a different way or eliminated completely TODO: decide the faith of the Player class
         //takes Inventory as its only parameter
-
-        CommandExecutor
-            commandExecutor = new(); //Creates a new CommandExecutor object, with one public method Execute()
-        //This method takes Command and Player objects as arguments and returns true if the command is executed successfully
+        
+        CommandExecutor commandExecutor = new();  //Creates a new CommandExecutor object, with one public method Execute()
+                                                  //This method takes Command and Player objects as arguments and returns true if the command is executed successfully
         Command command; //placeholder for a local variable command
-
-        DisplayMessage("welcome",
-            MainCity.Name); //Displaying the welcome message //TODO: this is not ideal, needs a rework
+        
+        DisplayMessage("welcome", MainCity.Name);  //Displaying the welcome message //TODO: this is not ideal, needs a rework
         DisplayMessage("help");
 
         _continuePlaying = true; //variable used for killing the game
@@ -91,49 +80,45 @@ public class Game {
          * This is the main loop of the game, that is responsible for handling inputs from the player.
          * It is instantiated automatically with the method Play() and is broken when the variable _continuePlaying is set to false by EndGame() method.
          */
-        while (_continuePlaying)
-        {
-            Console.WriteLine("\n----------\n");
-            CurrentRoom.Play(); //Displays the starting message/description of the current location
-            /*
+        while (_continuePlaying){
+            Console.WriteLine("\n----------\n");  
+            CurrentRoom.DisplayStartMessage();  //Displays the starting message/description of the current location
+            
             Console.Write("> ");  //just for formatting
 
             string? input = Console.ReadLine(); //takes the input from the user
-
-
+            
+            /*
              * This switch statement checks the instance of the CurrentRoom field(variable) and uses associated parser to execute the command
-
-            switch (CurrentRoom.GetType()) {
+             */
+            switch (CurrentRoom.GetType()) {  
                 case Type t when t == typeof(TravelMenu):
                     command = parserTravel.GetCommand(input);
                     break;
                 case Type t when t == typeof(PawnShop):
                     command = parserPawnShop.GetCommand(input);
-                    break;
+                    break; 
                 default:
                     command = parserMain.GetCommand(input);
-                    break;
+                    break; 
             }
-
+            
             /*
              * commandExecutor.Execute() returns value true, when the command was valid and false, when it was not,
              * if the command is not valid, print the invalid command message and try again.
-
+             */
             if (!commandExecutor.Execute(command, player)) {
                 DisplayMessage("invalid_command");
                 Console.ReadKey();
-                continue;
+                continue; 
             }
             //TODO: I dont know, if we  need anything here, but we should check.
         }
 
         DisplayMessage("game_end");  //After the game was ended and the while loop is terminated, prints a message.
-      }
-*/
-        }
     }
 
-
+    
     /*
      * Public method that just terminates the while loop in the Play() method.
      */

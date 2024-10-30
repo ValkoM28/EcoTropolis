@@ -52,9 +52,6 @@ public class CommandExecutor {
 
     private bool ExecuteTravel(string commandName, Player player, Game gameInstance) {
         switch (commandName.ToLower()) {
-            case "0":
-                gameInstance.ChangeCurrentLocation(gameInstance.PawnShop);
-                break; 
             case "1":
                 throw new NotImplementedException();
             case "2":
@@ -67,14 +64,6 @@ public class CommandExecutor {
                 throw new NotImplementedException();
             case "6":
                 throw new NotImplementedException();
-            case "7":
-                throw new NotImplementedException();
-            case "back":
-                gameInstance.ChangeCurrentLocation(gameInstance.MainCity);
-                break;
-            case "help": 
-                DisplayMessage("help_travel");
-                break; 
             default:
                 return false;
         }
