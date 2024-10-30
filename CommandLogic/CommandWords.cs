@@ -2,7 +2,7 @@
 
 public class CommandWords {
     private string[] validCommandsCity { get; } = ["travel", "build", "help", "menu", "quit", "look", "inventory"];
-    private string[] validCommandsTravel { get; } = [ "0", "1", "2", "3", "4", "5", "6", "7", "back", "help" ];
+    private string[] validCommandsTravel { get; } = [ "0", "1", "2", "3", "4", "5", "6", "help" ];
     private string[] validCommandsShop { get; } = ["buy", "sell", "back", "look", "help"];
     
     public string[] ValidCommands; 
