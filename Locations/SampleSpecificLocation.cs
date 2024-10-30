@@ -4,8 +4,7 @@ using static EcoTropolis.Messages.Messages;
 
 namespace EcoTropolis.Locations;
 
-public class SampleSpecificLocation : Location
-{
+public class SampleSpecificLocation : Location {
     private string[] _commandWords = [];
     private Game _game;
 
@@ -18,7 +17,8 @@ public class SampleSpecificLocation : Location
     }
 
     public override void Play() {
-        Parser parser = new(_commandWords, _game);
+        Parser parser = new(_commandWords, _game, this);
+
         CommandExecutor commandExecutor = new CommandExecutor(); 
         
         bool playing = true;
@@ -26,25 +26,26 @@ public class SampleSpecificLocation : Location
         DisplayStartMessage();
         Command command;
 
-        while (playing) //game happens
-        {
-
-            command = parser.GetCommand("dummy string");
+        while (playing) { //game happens
+            string? input = Console.ReadLine();
+            command = parser.GetCommand(input);
+            
         /*
          * commandExecutor.Execute() returns value true, when the command was valid and false, when it was not,
          * if the command is not valid, print the invalid command message and try again.
          */
-            if (!commandExecutor.Execute(command, _player))
-            {
+            if (!commandExecutor.Execute(command, _player)) {
                 DisplayMessage("invalid_command");
                 Console.ReadKey();
                 continue;
-                
             }
-        }
+            
+            
+            
+        } _game.ChangeCurrentLocation(_game.TravelMenu);
 
-//_game.ChangeCurrentLocation(_game.SomeRoom);
-}
+
+    }
 
 public override void DisplayStartMessage() {
 

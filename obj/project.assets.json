@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/brunonmiszczyszyn/.nuget/packages/": {}
+    "C:\\Users\\valko\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/brunonmiszczyszyn/Desktop/vs code/c#/EcoTropolis/EcoTropolis.csproj",
+      "projectUniqueName": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
       "projectName": "EcoTropolis",
-      "projectPath": "/Users/brunonmiszczyszyn/Desktop/vs code/c#/EcoTropolis/EcoTropolis.csproj",
-      "packagesPath": "/Users/brunonmiszczyszyn/.nuget/packages/",
-      "outputPath": "/Users/brunonmiszczyszyn/Desktop/vs code/c#/EcoTropolis/obj/",
+      "projectPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
+      "packagesPath": "C:\\Users\\valko\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/brunonmiszczyszyn/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\valko\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
