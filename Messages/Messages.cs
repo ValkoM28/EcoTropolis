@@ -48,11 +48,7 @@ public static class Messages
         }
     }
 
-
-    public static void DisplayHappinessLevel(HappinessIndicator happinessIndicator)
-    {
-        throw new NotImplementedException();
-    }
+    
 
     private static void PrintHelpMessageMain()
     {

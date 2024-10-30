@@ -1,4 +1,7 @@
-﻿namespace EcoTropolis.CommandLogic;
+﻿using System.Runtime.CompilerServices;
+using EcoTropolis.Locations;
+
+namespace EcoTropolis.CommandLogic;
 using static EcoTropolis.Messages.Messages; 
 
 public class CommandExecutor {
@@ -8,11 +11,22 @@ public class CommandExecutor {
         if (command == null) {
             return false; 
         }
-        
-        switch (command.CommandType) {
-            case "travel":
+
+ 
+        switch (command.CommandLocation.GetType()) {
+            case Type t when t == typeof(TravelMenu):
                 return ExecuteTravel(command.Name, player, command.GameInstance);
-            case "pawn_shop":
+            case Type t when t == typeof(PawnShop):
+                return ExecuteShop(command, player, command.GameInstance); 
+            
+            
+            case Type t when t == typeof(SampleSpecificLocation):
+                return ExecuteShop(command, player, command.GameInstance); 
+            case Type t when t == typeof(SampleSpecificLocation):
+                return ExecuteShop(command, player, command.GameInstance); 
+            case Type t when t == typeof(SampleSpecificLocation):
+                return ExecuteShop(command, player, command.GameInstance); 
+            case Type t when t == typeof(SampleSpecificLocation):
                 return ExecuteShop(command, player, command.GameInstance); 
             default:
                 return ExecuteMain(command.Name, player, command.GameInstance);
@@ -45,6 +59,7 @@ public class CommandExecutor {
             default:
                 return false;
         }
+        
         return true; 
     }
 
@@ -52,19 +67,25 @@ public class CommandExecutor {
     private bool ExecuteTravel(string commandName, Player player, Game gameInstance) {
         switch (commandName.ToLower()) {
             case "1":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.LosAngeles);
+                break; 
             case "2":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.Barcelona);
+                break;
             case "3":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.Tokyo);
+                break; 
             case "4":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.SaoPaulo);
+                break; 
             case "5":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.Amsterdam);
+                break;
             case "6":
-                throw new NotImplementedException();
+                gameInstance.ChangeCurrentLocation(gameInstance.Manilla);
+                break; 
             default:
-                return false;
+                return false; 
         }
         return true;
     }
@@ -86,8 +107,33 @@ public class CommandExecutor {
             default:
                 return false; 
         }
-        return true; 
+        return true;
 
     }
+
+    /*
+     * This is an example of command executor for one specific location.
+     */
+    private bool ExecuteManilla(Command command, Player player, Game gameInstance) {
+        switch (command.Name.ToLower()) {
+            case "buy":
+                gameInstance.PawnShop.BuyItem(command.SecondWord, player);
+                Console.WriteLine("here");
+                break;
+            case "sell":
+                throw new NotImplementedException();
+            case "back":
+                gameInstance.ChangeCurrentLocation(gameInstance.TravelMenu);
+                break;
+            case "look":
+                throw new NotImplementedException();
+            case "help":
+                throw new NotImplementedException();
+            default:
+                return false;
+        }
+
+        return true;
+    } 
 }
         
