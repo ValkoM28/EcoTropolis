@@ -1,134 +1,100 @@
-﻿namespace WorldOfZuul
-{
-    public class Game
-    {
-        private Room? currentRoom;
-        private Room? previousRoom;
+﻿using System.Runtime.CompilerServices;
+using EcoTropolis.CommandLogic;
+using EcoTropolis.InventorySystem;
+using EcoTropolis.Locations;
+using static EcoTropolis.Messages.Messages;
 
-        public Game()
-        {
-            CreateRooms();
-        }
+namespace EcoTropolis; 
 
-        private void CreateRooms()
-        {
-  
-            Room? outside = new("Outside", "You are standing outside the main entrance of the university. To the east is a large building, to the south is a computing lab, and to the west is the campus pub.");
-            Room? theatre = new("Theatre", "You find yourself inside a large lecture theatre. Rows of seats ascend up to the back, and there's a podium at the front. It's quite dark and quiet.");
-            Room? pub = new("Pub", "You've entered the campus pub. It's a cozy place, with a few students chatting over drinks. There's a bar near you and some pool tables at the far end.");
-            Room? lab = new("Lab", "You're in a computing lab. Desks with computers line the walls, and there's an office to the east. The hum of machines fills the room.");
-            Room? office = new("Office", "You've entered what seems to be an administration office. There's a large desk with a computer on it, and some bookshelves lining one wall.");
-
-            outside.SetExits(null, theatre, lab, pub); // North, East, South, West
-
-            theatre.SetExit("west", outside);
-
-            pub.SetExit("east", outside);
-
-            lab.SetExits(outside, office, null, null);
-
-            office.SetExit("west", lab);
-
-            currentRoom = outside;
-        }
-
-        public void Play()
-        {
-            Parser parser = new();
-
-            PrintWelcome();
-
-            bool continuePlaying = true;
-            while (continuePlaying)
-            {
-                Console.WriteLine(currentRoom?.ShortDescription);
-                Console.Write("> ");
-
-                string? input = Console.ReadLine();
-
-                if (string.IsNullOrEmpty(input))
-                {
-                    Console.WriteLine("Please enter a command.");
-                    continue;
-                }
-
-                Command? command = parser.GetCommand(input);
-
-                if (command == null)
-                {
-                    Console.WriteLine("I don't know that command.");
-                    continue;
-                }
-
-                switch(command.Name)
-                {
-                    case "look":
-                        Console.WriteLine(currentRoom?.LongDescription);
-                        break;
-
-                    case "back":
-                        if (previousRoom == null)
-                            Console.WriteLine("You can't go back from here!");
-                        else
-                            currentRoom = previousRoom;
-                        break;
-
-                    case "north":
-                    case "south":
-                    case "east":
-                    case "west":
-                        Move(command.Name);
-                        break;
-
-                    case "quit":
-                        continuePlaying = false;
-                        break;
-
-                    case "help":
-                        PrintHelp();
-                        break;
-
-                    default:
-                        Console.WriteLine("I don't know what command.");
-                        break;
-                }
-            }
-
-            Console.WriteLine("Thank you for playing World of Zuul!");
-        }
-
-        private void Move(string direction)
-        {
-            if (currentRoom?.Exits.ContainsKey(direction) == true)
-            {
-                previousRoom = currentRoom;
-                currentRoom = currentRoom?.Exits[direction];
-            }
-            else
-            {
-                Console.WriteLine($"You can't go {direction}!");
-            }
-        }
-
-
-        private static void PrintWelcome()
-        {
-            Console.WriteLine("Welcome to the World of Zuul!");
-            Console.WriteLine("World of Zuul is a new, incredibly boring adventure game.");
-            PrintHelp();
-            Console.WriteLine();
-        }
-
-        private static void PrintHelp()
-        {
-            Console.WriteLine("You are lost. You are alone. You wander");
-            Console.WriteLine("around the university.");
-            Console.WriteLine();
-            Console.WriteLine("Navigate by typing 'north', 'south', 'east', or 'west'.");
-            Console.WriteLine("Type 'look' for more details.");
-            Console.WriteLine("Type 'back' to go to the previous room.");
-            Console.WriteLine("Type 'help' to print this message again.");
-            Console.WriteLine("Type 'quit' to exit the game.");
-        }
+public class Game {
+    /* This it the main class of the game EcoTropolis.
+     * This class contains the main game loop, that gets a text input, parses that as a command and then tries to execute the command.
+     * Properties: */
+    public Location? CurrentRoom;  // Stores the current location of the game
+    private Player _player;  
+    private bool _continuePlaying;
+    /*
+     * Placeholders for all the locations
+     * TODO: Rework this as either a List or a Dictionary (or a HashMap)
+     */
+    public TravelMenu TravelMenu { get; private set; }  //Instance of TravelMenu class, used by the CommandExecutor, to enable travel
+    //Attributes of the TravelMenu class: TODO:to be implemented and put here
+    public MainCity MainCity { get; private set; }  //Instance of MainCity class, holds player's main city and its properties
+    //Attributes of the MainCity class:  TODO:to be implemented and put here
+    public PawnShop PawnShop { get; private set;  }  //Instance of PawnShop class, holds items available to buy and also serves for a player to sell their items
+    //Attributes of the PawnShop class:  TODO:to be implemented and put here
+    
+    public SampleSpecificLocation LosAngeles { get; private set;  }
+    public SampleSpecificLocation Barcelona { get; private set;  }
+    public SampleSpecificLocation Tokyo { get; private set;  }
+    public SampleSpecificLocation SaoPaulo { get; private set;  }
+    public SampleSpecificLocation Amsterdam { get; private set;  }
+    
+    public Manilla Manilla { get; private set;  }
+    
+    
+    public SampleSpecificLocation Location { get; private set;  }
+     //boolean used to start and stop the game
+     
+    /*
+     * The solemn purpose (at least for now) of the constructor of the Game class is to initialize all the locations of the game. 
+     */
+    public Game(string cityName) {
+        _player = new Player(new Inventory(this)); 
+        CreateRooms(cityName);
     }
+    
+    /*
+     * This is where all locations are instantiated. 
+     */
+    private void CreateRooms(string mainCityName)
+    {
+        Manilla = new Manilla(this, _player);
+        
+        MainCity = new MainCity(mainCityName, this, _player);
+        TravelMenu = new TravelMenu(this, _player);
+        PawnShop = new PawnShop();
+        
+        
+        Location = new SampleSpecificLocation("Manilla", this,  _player); 
+        
+        
+        //TODO: Create locations here
+    }
+    
+    /*
+     * Simple method to change the current location outside the Game class. 
+     */
+    public void ChangeCurrentLocation(Location location) {
+        CurrentRoom = location; 
+        CurrentRoom.Play();
+    }
+
+
+    public void Play() {
+        /* Main game loop
+         * Used variables: */
+        
+        DisplayMessage("welcome", MainCity.Name);  //Displaying the welcome message //TODO: this is not ideal, needs a rework
+        DisplayMessage("help");
+        
+        ChangeCurrentLocation(TravelMenu); //Starting the game in the TravelMenu location
+        /*
+        _continuePlaying = true; //variable used for killing the game
+        while (_continuePlaying){
+             CurrentRoom.Play();
+        }*/
+
+        DisplayMessage("game_end");  //After the game was ended and the while loop is terminated, prints a message.
+    }
+
+    
+    /*
+     * Public method that just terminates the while loop in the Play() method.
+     */
+    public void EndGame() {
+        _continuePlaying = false; 
+    }
+    
 }
+

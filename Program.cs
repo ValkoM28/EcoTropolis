@@ -75,18 +75,14 @@ to maintain modularity, extensibility, and maintainability.
 
 */
 
-using WorldOfZuul.Maps; 
-namespace WorldOfZuul
-{
-    public class Program
-    {
-        public static void Main()
-        {
-            MapAfrica map = new MapAfrica(); 
-            map.DisplayMap();
-            //Game game = new();
-            //game.Play();
-        }
+namespace EcoTropolis; 
+
+public class Program {
+    public static void Main() {
+        StartMenu start = new();
+
+        Game game = new(start.CityName); 
+        game.Play();
     }
 }
 
