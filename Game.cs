@@ -1,3 +1,4 @@
+
 ﻿using System.Runtime.CompilerServices;
 using EcoTropolis.CommandLogic;
 using EcoTropolis.InventorySystem;
@@ -47,8 +48,7 @@ public class Game {
     /*
      * This is where all locations are instantiated. 
      */
-    private void CreateRooms(string mainCityName)
-    {
+    private void CreateRooms(string mainCityName) {
         Manilla = new Manilla(this, _player);
         
         MainCity = new MainCity(mainCityName, this, _player);
