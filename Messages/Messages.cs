@@ -83,9 +83,33 @@ public static class Messages
               
     }
 
+    public static class SaoPauloMessages
+    {
+        public static void PrintStartMessage()
+        {
+            Console.WriteLine("Welcome, Mayor of São Paulo!\n\n" +
+                          "As the newly appointed leader of this sprawling metropolis, you’re taking the wheel in a city that never sleeps — and sometimes barely moves.\n" +
+                          "São Paulo’s traffic is infamous, a daily maze of gridlocks, crowded buses, honking horns, and frustrated commuters. From the bustling avenues of Paulista to\n" +
+                          "the quiet outskirts, your citizens need solutions. Can you reduce congestion, improve public transit, and make the city greener?\n\n" +
+                          "Every decision you make will impact millions, and your success will be measured by the flow of traffic and the satisfaction of the people. Will you master the challenges of São Paulo’s streets and create a city that moves for everyone?\n\n" +
+                          "The road ahead is yours, Mayor.");
+        }
+
+        public static void PrintSuccessMessage()
+        {
+            Console.WriteLine("Congratulations! You have successfully implemented sustainable solutions in São Paulo.");
+        }
+
+        public static void PrintFailureMessage()
+        {
+            Console.WriteLine("Unfortunately, your efforts in São Paulo did not yield the desired results. Try again to find better solutions.");
+        }
+    }
+
+
     private static void PrintInvalidCommandMessage() // invalid command message
     {
-        Console.WriteLine("Invalid command message - please implement!!!!!!!!!!!!!!!!");
+        Console.WriteLine("Invalid command message, please try again");
     }
 
     private static void PrintInvalidNameMessage() // invalid city name message

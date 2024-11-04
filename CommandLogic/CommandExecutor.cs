@@ -140,6 +140,9 @@ public class CommandExecutor {
         switch (command.Name.ToLower()) {
             case "look":
                 throw new NotImplementedException();
+            case "start":
+                SaoPauloMessages.PrintStartMessage();
+                break;
             case "help":
                 throw new NotImplementedException();
             default:

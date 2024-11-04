@@ -15,7 +15,6 @@ public class Parser {
         _location = location; 
     } 
     
-    
     public Command? GetCommand(string inputLine) {
         if (string.IsNullOrEmpty(inputLine)) {
             return null;
