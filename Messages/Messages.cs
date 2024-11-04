@@ -106,6 +106,27 @@ public static class Messages
         }
     }
 
+public static class TokyoMessages
+{
+    public static void PrintStartMessage()
+    {
+        Console.WriteLine("Welcome, Governor of Tokyo!\n\n" +
+                          "As the newly appointed leader of this vibrant metropolis, you're stepping into a city that never truly stops. Tokyo is a bustling hub of technology, culture, and tradition, with its own unique challenges.\n" +
+                          "From the neon-lit streets of Shibuya to the peaceful gardens of the Imperial Palace, your citizens are counting on you to address their daily needs. The city faces issues with overpopulation, efficient public transit, and sustainability in the face of rapid modernization.\n\n" +
+                          "Every decision you make will impact millions, and your success will be measured by the livability of the city and the well-being of its people. Can you balance tradition with innovation and make Tokyo a model for the future?\n\n" +
+                          "The future of Tokyo rests in your hands, Governor.");
+    }
+
+    public static void PrintSuccessMessage()
+    {
+        Console.WriteLine("Congratulations! You have successfully transformed Tokyo into a more sustainable and efficient metropolis.");
+    }
+
+    public static void PrintFailureMessage()
+    {
+        Console.WriteLine("Unfortunately, your efforts in Tokyo did not yield the desired results. Try again to find better solutions.");
+    }
+}
 
     private static void PrintInvalidCommandMessage() // invalid command message
     {

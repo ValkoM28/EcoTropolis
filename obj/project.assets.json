@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/brunonmiszczyszyn/.nuget/packages/": {}
+    "/Users/niclasliedke/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/brunonmiszczyszyn/Desktop/vs code/c#/EcoTropolis/EcoTropolis.csproj",
+      "projectUniqueName": "/Users/niclasliedke/Desktop/projects/CSharp/EcoTropolis/EcoTropolis.csproj",
       "projectName": "EcoTropolis",
-      "projectPath": "/Users/brunonmiszczyszyn/Desktop/vs code/c#/EcoTropolis/EcoTropolis.csproj",
-      "packagesPath": "/Users/brunonmiszczyszyn/.nuget/packages/",
-      "outputPath": "/Users/brunonmiszczyszyn/Desktop/vs code/c#/EcoTropolis/obj/",
+      "projectPath": "/Users/niclasliedke/Desktop/projects/CSharp/EcoTropolis/EcoTropolis.csproj",
+      "packagesPath": "/Users/niclasliedke/.nuget/packages/",
+      "outputPath": "/Users/niclasliedke/Desktop/projects/CSharp/EcoTropolis/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/brunonmiszczyszyn/.nuget/NuGet/NuGet.Config"
+        "/Users/niclasliedke/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
