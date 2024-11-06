@@ -134,11 +134,13 @@ public class CommandExecutor {
         }
 
         return true;
-    } 
+    }
 
 
-        private bool ExecuteAmsterdam(Command command, Player player, Game gameInstance) {
-        switch (command.Name.ToLower()) {
+    private bool ExecuteAmsterdam(Command command, Player player, Game gameInstance)
+    {
+        switch (command.Name.ToLower())
+        {
             case "buy":
                 gameInstance.PawnShop.BuyItem(command.SecondWord, player);
                 Console.WriteLine("here");
@@ -153,7 +155,11 @@ public class CommandExecutor {
             case "help":
                 throw new NotImplementedException();
             case "metro":
-            return true;
+                return true;
+        }
+
+        return true;
+    }
 
     private bool ExecuteSaoPaulo(Command command, Player player, Game gameInstance) {
         switch (command.Name.ToLower()) {
