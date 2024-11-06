@@ -82,7 +82,7 @@ public class CommandExecutor {
                 gameInstance.ChangeCurrentLocation(gameInstance.Amsterdam);
                 break;
             case "6":
-                gameInstance.ChangeCurrentLocation(gameInstance.Manilla);
+                gameInstance.ChangeCurrentLocation(gameInstance.Manila);
                 break; 
             default:
                 return false; 
