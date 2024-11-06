@@ -52,6 +52,7 @@ public class TravelMenu : Location {
                          4 - Sao Paulo
                          5 - Amsterdam
                          6 - Manilla
+                         
                          """;
         
         Console.WriteLine(welcome);

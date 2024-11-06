@@ -1,5 +1,5 @@
 
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 using EcoTropolis.CommandLogic;
 using EcoTropolis.InventorySystem;
 using EcoTropolis.Locations;
@@ -28,11 +28,10 @@ public class Game {
     public SampleSpecificLocation LosAngeles { get; private set;  }
     public SampleSpecificLocation Barcelona { get; private set;  }
     public SampleSpecificLocation Tokyo { get; private set;  }
-    public SampleSpecificLocation Amsterdam { get; private set;  }
-    
+
+    public SaoPaulo SaoPaulo { get; private set;  }    
     public Manilla Manilla { get; private set;  }
-    public SaoPaulo SaoPaulo { get; private set;  }
-    
+    public Amsterdam Amsterdam { get; private set; }    
     
     public SampleSpecificLocation Location { get; private set;  }
      //boolean used to start and stop the game
@@ -50,16 +49,14 @@ public class Game {
      */
     private void CreateRooms(string mainCityName) {
         Manilla = new Manilla(this, _player);
+        Amsterdam = new Amsterdam(this, _player);
         SaoPaulo = new SaoPaulo(this, _player);
         
         MainCity = new MainCity(mainCityName, this, _player);
         TravelMenu = new TravelMenu(this, _player);
         PawnShop = new PawnShop();
         
-        
-        Location = new SampleSpecificLocation("Manilla", this,  _player);
-        Location = new SampleSpecificLocation("SaoPaulo", this,  _player);
-        
+       
         
         //TODO: Create locations here
     }
