@@ -24,7 +24,7 @@ public class Game {
     public PawnShop PawnShop { get; private set;  }  //Instance of PawnShop class, holds items available to buy and also serves for a player to sell their items
     //Attributes of the PawnShop class:  TODO:to be implemented and put here
     
-    public SampleSpecificLocation LosAngeles { get; private set;  }
+    public LosAngeles LosAngeles { get; private set;  }
     public SampleSpecificLocation Barcelona { get; private set;  }
     public SampleSpecificLocation Tokyo { get; private set;  }
     public SampleSpecificLocation SaoPaulo { get; private set;  }
@@ -50,7 +50,7 @@ public class Game {
     private void CreateRooms(string mainCityName)
     {
         Manilla = new Manilla(this, _player);
-        
+        LosAngeles = new LosAngeles(this, _player);
         MainCity = new MainCity(mainCityName, this, _player);
         TravelMenu = new TravelMenu(this, _player);
         PawnShop = new PawnShop();

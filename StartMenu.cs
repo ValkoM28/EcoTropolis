@@ -13,7 +13,7 @@ public class StartMenu
 
         DisplayMessage("start"); 
         Console.WriteLine("Press any key to continue...");
-        Console.ReadKey();
+        //Console.ReadKey();
         
         Console.WriteLine("\n----------\n");
             

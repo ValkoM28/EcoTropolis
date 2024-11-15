@@ -20,8 +20,8 @@ public class CommandExecutor {
                 return ExecuteShop(command, player, command.GameInstance); 
             
             
-            case Type t when t == typeof(SampleSpecificLocation):
-                return ExecuteShop(command, player, command.GameInstance); 
+            case Type t when t == typeof(LosAngeles):
+                return ExecuteLosAngeles(command, player, command.GameInstance); 
             case Type t when t == typeof(SampleSpecificLocation):
                 return ExecuteShop(command, player, command.GameInstance); 
             case Type t when t == typeof(SampleSpecificLocation):
@@ -135,5 +135,23 @@ public class CommandExecutor {
 
         return true;
     } 
+
+    private bool ExecuteLosAngeles(Command command, Player player, Game gameInstance) {
+        switch (command.Name.ToLower()) {
+            case "back":
+                gameInstance.ChangeCurrentLocation(gameInstance.TravelMenu);
+                break;
+            case "look":
+                Console.WriteLine("looking");
+                break;
+            case "help":
+                Console.WriteLine("help message");
+                break;
+            default:
+                return false;
+        }
+
+        return true;
+    }
 }
         
