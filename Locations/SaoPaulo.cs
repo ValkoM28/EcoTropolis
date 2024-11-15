@@ -27,7 +27,7 @@ public class SaoPaulo : Location {
         // Set a flag to keep the game loop running
         bool playing = true;
         // Create a parser instance with the command words, game, and current location
-        Parser parser = new(_commandWords, _game, this);
+        Parser parser = new(_game, this);
 
         // Create an instance of CommandExecutor to handle commands
         CommandExecutor commandExecutor = new CommandExecutor(); 
@@ -35,7 +35,7 @@ public class SaoPaulo : Location {
         while (playing) { //game loop logic here 
             string input = Console.ReadLine();
             // Parse the command
-            Command command = parser.GetCommand(input);
+            Command command = parser.GetCommand(input, _commandWords);
             // Execute the command
             if (command.Name.ToLower() == "start")
             {

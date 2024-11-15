@@ -8,28 +8,37 @@ public class Manila : Location {
     private Game _game; 
     private Player _player;
     private string[] _commandWords = [];
+    
+    private List<DecisionPoint> _decisionPoints = new List<DecisionPoint>();
 
     public string ProgressIndicator = "0"; 
     
     public Manila(Game game, Player player) : base("Manilla") {
         _player = player;
         _game = game;
+        CreateDecisionPoints();
     }
 
-    
+    private void CreateDecisionPoints() {
+        DecisionPoint decisionPoint1 = new DecisionPoint("Meeting",
+            "you are on the meeting"); 
+        decisionPoint1.AddOption("1", "Build a casino", 0);
+        
+        _decisionPoints.Add(decisionPoint1);
+    }
     public override void Play() {
         DisplayStartMessage();
         Console.ReadLine(); 
         
         bool playing = true;
         
-        Parser parser = new(_commandWords, _game, this);
+        Parser parser = new(_game, this);
         CommandExecutor commandExecutor = new CommandExecutor();
         
         while (playing) {
             Console.Write("> ");
             string? input = Console.ReadLine();
-            Command command = parser.GetCommand(input);
+            Command command = parser.GetCommand(input, _commandWords);
             
             if (!commandExecutor.Execute(command, _player)) {
                 DisplayMessage("invalid_command");
@@ -51,14 +60,6 @@ public class Manila : Location {
                           """ );
     }
     
-    private void diplayMessage(string messageID) {
-        switch (messageID) {
-            case "0":
-                Console.WriteLine("");
-                break; 
-                
-        }
-    }
     
     
 

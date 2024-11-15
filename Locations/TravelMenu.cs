@@ -17,7 +17,7 @@ public class TravelMenu : Location {
         _player = player; 
     }
     public override void Play() {
-        Parser parser = new(_commandWords, _game, this);
+        Parser parser = new(_game, this);
         CommandExecutor commandExecutor = new CommandExecutor(); 
         
         bool playing = true;
@@ -27,7 +27,7 @@ public class TravelMenu : Location {
 
         while (playing) { //game happens
             string? input = Console.ReadLine();
-            command = parser.GetCommand(input);
+            command = parser.GetCommand(input, _commandWords);
 
             playing = false; 
             

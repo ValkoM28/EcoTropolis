@@ -16,5 +16,9 @@ public class Command {
         SecondWord = secondWord;
         CommandLocation = location;
     }
+
+    public bool Execute() {
+        return false; 
+    }
 }
 
