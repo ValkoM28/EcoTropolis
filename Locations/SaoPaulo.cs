@@ -40,6 +40,7 @@ public class SaoPaulo : Location {
             if (command.Name.ToLower() == "start")
             {
                 SaoPauloMessages.PrintStartMessage();
+                SaoPauloMessages.PrintScene1();
             }
         }
     }
