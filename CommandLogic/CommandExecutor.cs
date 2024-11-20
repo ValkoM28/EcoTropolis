@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+/*
 using EcoTropolis.Locations;
 
 namespace EcoTropolis.CommandLogic;
@@ -113,7 +114,7 @@ public class CommandExecutor {
 
     /*
      * This is an example of command executor for one specific location.
-     */
+     
     private bool ExecuteManilla(Command command, Player player, Game gameInstance) {
         switch (command.Name.ToLower()) {
             case "buy":
@@ -181,4 +182,4 @@ public class CommandExecutor {
 
 
 }
-        
+        */

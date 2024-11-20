@@ -4,21 +4,19 @@ namespace EcoTropolis.Locations;
 
 public class TravelMenu : Location {
     
-    public string Description { get; } = ""; 
-    public Dictionary<string, Location> Exits { get; }
+    public string Description { get; } = "Travel menu description dummy text"; 
     private string[] _commandWords = [ "0", "1", "2", "3", "4", "5", "6", "help" ];
     private Game _game;
     private Player _player; 
     
     
-    public TravelMenu(Game game, Player player) : base("Travel Menu")
-    {
+    public TravelMenu(Game game, Player player) : base("Travel Menu") {
         _game = game;
         _player = player; 
     }
+    
     public override void Play() {
         Parser parser = new(_game, this);
-        CommandExecutor commandExecutor = new CommandExecutor(); 
         
         bool playing = true;
         
@@ -28,21 +26,52 @@ public class TravelMenu : Location {
         while (playing) { //game happens
             string? input = Console.ReadLine();
             command = parser.GetCommand(input, _commandWords);
-
-            playing = false; 
             
-            if (!commandExecutor.Execute(command, _player))
-            {
-                playing = true; 
+            if (ExecuteCommand(command)) {
                 DisplayMessage("invalid_command");
                 Console.ReadKey();
+                continue;
             }
-            
+            playing = false;
         }
     }
-    public override void DisplayStartMessage() {
-        
 
+    public override bool ExecuteCommand(Command command) {
+        //TODO: delete a location after it was finished 
+        
+        if (command == null) {
+            return false;
+        }
+        switch (command.Name.ToLower()) {
+            case "1":
+                _game.ChangeCurrentLocation(_game.LosAngeles);
+                break; 
+            case "2":
+                _game.ChangeCurrentLocation(_game.Barcelona);
+                break;
+            case "3":
+                _game.ChangeCurrentLocation(_game.Tokyo);
+                break; 
+            case "4":
+                _game.ChangeCurrentLocation(_game.SaoPaulo);
+                break; 
+            case "5":
+                _game.ChangeCurrentLocation(_game.Amsterdam);
+                break;
+            case "6":
+                _game.ChangeCurrentLocation(_game.Manila);
+                break; 
+            case "help":
+                DisplayStartMessage();
+                break;
+            default:
+                return false; 
+        }
+        return true;
+    }
+
+    
+    public override void DisplayStartMessage() {
         string welcome = """
                          Welcome to the travel menu:  
                          Pick the location of your next journey
@@ -54,7 +83,6 @@ public class TravelMenu : Location {
                          6 - Manilla
                          
                          """;
-        
         Console.WriteLine(welcome);
     }
     

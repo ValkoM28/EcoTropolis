@@ -19,7 +19,7 @@ public class SampleSpecificLocation : Location {
     public override void Play() {
         Parser parser = new(_game, this);
 
-        CommandExecutor commandExecutor = new CommandExecutor(); 
+         
         
         bool playing = true;
         
@@ -33,12 +33,12 @@ public class SampleSpecificLocation : Location {
         /*
          * commandExecutor.Execute() returns value true, when the command was valid and false, when it was not,
          * if the command is not valid, print the invalid command message and try again.
-         */
+         
             if (!commandExecutor.Execute(command, _player)) {
                 DisplayMessage("invalid_command");
                 Console.ReadKey();
                 continue;
-            }
+            }*/
             
             
             
@@ -47,7 +47,12 @@ public class SampleSpecificLocation : Location {
 
     }
 
-public override void DisplayStartMessage() {
+    public override bool ExecuteCommand(Command command)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DisplayStartMessage() {
 
 }
 

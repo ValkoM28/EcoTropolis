@@ -78,11 +78,6 @@ public class Game {
         DisplayMessage("help");
         
         ChangeCurrentLocation(TravelMenu); //Starting the game in the TravelMenu location
-        /*
-        _continuePlaying = true; //variable used for killing the game
-        while (_continuePlaying){
-             CurrentRoom.Play();
-        }*/
 
         DisplayMessage("game_end");  //After the game was ended and the while loop is terminated, prints a message.
     }

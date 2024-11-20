@@ -1,4 +1,5 @@
-﻿using EcoTropolis.InventorySystem;
+﻿using EcoTropolis.CommandLogic;
+using EcoTropolis.InventorySystem;
 using static EcoTropolis.Messages.Messages;
 
 
@@ -18,6 +19,9 @@ public abstract class Location {
     public abstract void DisplayStartMessage(); 
     public abstract void ShowDescription();
     public abstract void Play(); 
+    
+    public abstract bool ExecuteCommand(Command command);
+    
 
 
 

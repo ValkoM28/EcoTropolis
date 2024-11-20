@@ -30,7 +30,6 @@ public class SaoPaulo : Location {
         Parser parser = new(_game, this);
 
         // Create an instance of CommandExecutor to handle commands
-        CommandExecutor commandExecutor = new CommandExecutor(); 
         // Game loop
         while (playing) { //game loop logic here 
             string input = Console.ReadLine();
@@ -43,7 +42,12 @@ public class SaoPaulo : Location {
             }
         }
     }
-    
+
+    public override bool ExecuteCommand(Command command)
+    {
+        throw new NotImplementedException();
+    }
+
     // Override the DisplayStartMessage method to show a message when the player enters SaoPaulo
     public override void DisplayStartMessage() {
         Console.WriteLine("\nYou are now in Sao Paulo. \n" +
