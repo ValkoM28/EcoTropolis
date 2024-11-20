@@ -1,4 +1,5 @@
-﻿using EcoTropolis.InventorySystem;
+﻿using EcoTropolis.CommandLogic;
+using EcoTropolis.InventorySystem;
 
 namespace EcoTropolis.Locations;
 
@@ -35,6 +36,12 @@ public class PawnShop : Location
     {
         
     }
+
+    public override bool ExecuteCommand(Command command)
+    {
+        throw new NotImplementedException();
+    }
+
     public bool BuyItem(string numberString, Player player)
     {
         if (short.TryParse(numberString, out short numberShort) && numberShort <= itemsAvailable.Count)

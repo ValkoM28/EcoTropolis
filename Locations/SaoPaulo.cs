@@ -27,23 +27,28 @@ public class SaoPaulo : Location {
         // Set a flag to keep the game loop running
         bool playing = true;
         // Create a parser instance with the command words, game, and current location
-        Parser parser = new(_commandWords, _game, this);
+        Parser parser = new(_game, this);
 
         // Create an instance of CommandExecutor to handle commands
-        CommandExecutor commandExecutor = new CommandExecutor(); 
         // Game loop
         while (playing) { //game loop logic here 
             string input = Console.ReadLine();
             // Parse the command
-            Command command = parser.GetCommand(input);
+            Command command = parser.GetCommand(input, _commandWords);
             // Execute the command
             if (command.Name.ToLower() == "start")
             {
                 SaoPauloMessages.PrintStartMessage();
+                SaoPauloMessages.PrintScene1();
             }
         }
     }
-    
+
+    public override bool ExecuteCommand(Command command)
+    {
+        throw new NotImplementedException();
+    }
+
     // Override the DisplayStartMessage method to show a message when the player enters SaoPaulo
     public override void DisplayStartMessage() {
         Console.WriteLine("\nYou are now in Sao Paulo. \n" +

@@ -61,6 +61,15 @@ public class Amsterdam : Location
         } 
             _game.ChangeCurrentLocation(_game.TravelMenu);
         }
+<<<<<<< HEAD
+=======
+
+    public override bool ExecuteCommand(Command command)
+    {
+        throw new NotImplementedException();
+    }
+
+>>>>>>> 5c4387e1385f1676b7a1e4504f72e7f47901ae97
     public bool AmsterdamCommands;
 
     public override void DisplayStartMessage() {

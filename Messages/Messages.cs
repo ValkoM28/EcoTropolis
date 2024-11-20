@@ -85,19 +85,20 @@ public static class Messages
 
     public static class SaoPauloMessages
     {
-        public static void PrintStartMessage()
-        {
+        public static void PrintStartMessage() {
             Console.WriteLine("Welcome, Mayor of São Paulo!\n\n" +
                           "As the newly appointed leader of this sprawling metropolis, you’re taking the wheel in a city that never sleeps — and sometimes barely moves.\n" +
                           "São Paulo’s traffic is infamous, a daily maze of gridlocks, crowded buses, honking horns, and frustrated commuters. From the bustling avenues of Paulista to\n" +
                           "the quiet outskirts, your citizens need solutions. Can you reduce congestion, improve public transit, and make the city greener?\n\n" +
-                          "Every decision you make will impact millions, and your success will be measured by the flow of traffic and the satisfaction of the people. Will you master the challenges of São Paulo’s streets and create a city that moves for everyone?\n\n" +
-                          "The road ahead is yours, Mayor.");
+                          "Every decision you make will impact millions, and your success will be measured by the flow of traffic and the satisfaction of the people. \n" +
+                          "Will you master the challenges of São Paulo’s streets and create a city that moves for everyone?\n\n" +
+                          "The road ahead is yours, Mayor.\n");
         }
 
-        public static void PrintSuccessMessage()
+        public static void PrintScene1()
         {
-            Console.WriteLine("Congratulations! You have successfully implemented sustainable solutions in São Paulo.");
+            Console.WriteLine("You’re in your office when your advisor, Camila, walks in with a concerned expression.\n" +
+                              "Camila: Good morning, Mayor! I know it’s only your first day, but we need to tackle the traffic problem head-on. We’ve had complaints from all over the city, and citizens are demanding change. Do you have any ideas on where to start?");
         }
 
         public static void PrintFailureMessage()

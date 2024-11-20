@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5c4387e1385f1676b7a1e4504f72e7f47901ae97
 using System.Runtime.CompilerServices;
 using EcoTropolis.CommandLogic;
 using EcoTropolis.InventorySystem;
@@ -30,7 +33,11 @@ public class Game {
     public SampleSpecificLocation Tokyo { get; private set;  }
 
     public SaoPaulo SaoPaulo { get; private set;  }    
+<<<<<<< HEAD
     public Manilla Manilla { get; private set;  }
+=======
+    public Manila Manila { get; private set;  }
+>>>>>>> 5c4387e1385f1676b7a1e4504f72e7f47901ae97
     public Amsterdam Amsterdam { get; private set; }    
     
     public SampleSpecificLocation Location { get; private set;  }
@@ -48,7 +55,11 @@ public class Game {
      * This is where all locations are instantiated. 
      */
     private void CreateRooms(string mainCityName) {
+<<<<<<< HEAD
         Manilla = new Manilla(this, _player);
+=======
+        Manila = new Manila(this, _player);
+>>>>>>> 5c4387e1385f1676b7a1e4504f72e7f47901ae97
         Amsterdam = new Amsterdam(this, _player);
         SaoPaulo = new SaoPaulo(this, _player);
         
@@ -78,11 +89,6 @@ public class Game {
         DisplayMessage("help");
         
         ChangeCurrentLocation(TravelMenu); //Starting the game in the TravelMenu location
-        /*
-        _continuePlaying = true; //variable used for killing the game
-        while (_continuePlaying){
-             CurrentRoom.Play();
-        }*/
 
         DisplayMessage("game_end");  //After the game was ended and the while loop is terminated, prints a message.
     }

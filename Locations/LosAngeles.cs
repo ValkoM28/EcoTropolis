@@ -17,9 +17,9 @@ public class LosAngeles : Location {
     }
 
     public override void Play() {
-        Parser parser = new(_commandWords, _game, this);
+        Parser parser = new(_game, this);
 
-        CommandExecutor commandExecutor = new CommandExecutor(); 
+        //CommandExecutor commandExecutor = new CommandExecutor(); 
         
         bool playing = true;
         
@@ -28,17 +28,17 @@ public class LosAngeles : Location {
 
         while (playing) { //game happens
             string? input = Console.ReadLine();
-            command = parser.GetCommand(input);
+            command = parser.GetCommand(input, _commandWords);
             
         /*
          * commandExecutor.Execute() returns value true, when the command was valid and false, when it was not,
          * if the command is not valid, print the invalid command message and try again.
-         */
+         
             if (!commandExecutor.Execute(command, _player)) {
                 DisplayMessage("invalid_command");
                 Console.ReadKey();
                 continue;
-            }
+            }*/
             
             
             
@@ -47,7 +47,12 @@ public class LosAngeles : Location {
 
     }
 
-public override void DisplayStartMessage() {
+    public override bool ExecuteCommand(Command command)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DisplayStartMessage() {
 
 }
 
