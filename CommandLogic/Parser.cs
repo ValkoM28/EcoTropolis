@@ -14,15 +14,12 @@ public class Parser {
     
     public Command? GetCommand(string inputLine, string[] commandWords) {
         if (string.IsNullOrEmpty(inputLine)) {
-            Console.WriteLine("failed on Inputline");
             return null;
         }
         
         string[] words = inputLine.Split(" ");
-        Console.WriteLine(commandWords);
 
         if (!IsValidCommand(words[0], commandWords)) {
-            Console.WriteLine("failed on IsValidCommand");
             return null;
         }
         
