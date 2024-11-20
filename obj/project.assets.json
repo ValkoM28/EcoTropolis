@@ -8,11 +8,16 @@
     "net8.0": []
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\david\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\valko\\.nuget\\packages\\": {}
+>>>>>>> b69615283ec5f59de9f32a6f4da1413af4eb68b1
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\david\\EcoTropolis\\EcoTropolis-1\\EcoTropolis.csproj",
       "projectName": "EcoTropolis",
       "projectPath": "C:\\Users\\david\\EcoTropolis\\EcoTropolis-1\\EcoTropolis.csproj",
@@ -22,6 +27,16 @@
       "configFilePaths": [
         "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
+      "projectName": "EcoTropolis",
+      "projectPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
+      "packagesPath": "C:\\Users\\valko\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\valko\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> b69615283ec5f59de9f32a6f4da1413af4eb68b1
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -66,7 +81,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+>>>>>>> b69615283ec5f59de9f32a6f4da1413af4eb68b1
       }
     }
   }

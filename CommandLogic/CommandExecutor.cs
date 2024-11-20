@@ -134,7 +134,32 @@ public class CommandExecutor {
         }
 
         return true;
-    } 
+    }
+
+
+    private bool ExecuteAmsterdam(Command command, Player player, Game gameInstance)
+    {
+        switch (command.Name.ToLower())
+        {
+            case "buy":
+                gameInstance.PawnShop.BuyItem(command.SecondWord, player);
+                Console.WriteLine("here");
+                break;
+            case "sell":
+                throw new NotImplementedException();
+            case "back":
+                gameInstance.ChangeCurrentLocation(gameInstance.TravelMenu);
+                break;
+            case "look":
+                throw new NotImplementedException();
+            case "help":
+                throw new NotImplementedException();
+            case "metro":
+                return true;
+        }
+
+        return true;
+    }
 
     private bool ExecuteSaoPaulo(Command command, Player player, Game gameInstance) {
         switch (command.Name.ToLower()) {
@@ -145,11 +170,15 @@ public class CommandExecutor {
                 break;
             case "help":
                 throw new NotImplementedException();
+
             default:
                 return false;
         }
 
         return true;
-    }
+
+    } 
+
+
 }
         

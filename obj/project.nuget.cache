@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "VA6lSvK8xH8=",
   "success": true,
   "projectFilePath": "C:\\Users\\david\\EcoTropolis\\EcoTropolis-1\\EcoTropolis.csproj",
+=======
+  "dgSpecHash": "WwBBOCvrjR4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
+>>>>>>> b69615283ec5f59de9f32a6f4da1413af4eb68b1
   "expectedPackageFiles": [],
   "logs": []
 }
