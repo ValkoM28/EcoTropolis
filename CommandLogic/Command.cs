@@ -3,7 +3,7 @@
 namespace EcoTropolis.CommandLogic; 
 
 public class Command {
-    public Game GameInstance;
+    private Game _game;
     public string Name { get; }
     public string? SecondWord { get; } // this might be used for future expansions, such as "take apple".
     public Location CommandLocation { get;  }
@@ -11,7 +11,7 @@ public class Command {
     
     
     public Command(Game game, Location location, string name, string? secondWord = null) {
-        GameInstance = game; 
+        _game = game; 
         Name = name;
         SecondWord = secondWord;
         CommandLocation = location;

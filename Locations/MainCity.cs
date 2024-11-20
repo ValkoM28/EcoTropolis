@@ -1,4 +1,5 @@
-﻿using static EcoTropolis.Messages.Messages;
+﻿using EcoTropolis.CommandLogic;
+using static EcoTropolis.Messages.Messages;
 
 namespace EcoTropolis.Locations;
 
@@ -26,6 +27,11 @@ public class MainCity : Location {
     public override void Play()
     {
         
+    }
+
+    public override bool ExecuteCommand(Command command)
+    {
+        throw new NotImplementedException();
     }
 
     public override void ShowDescription() {
