@@ -64,7 +64,7 @@ public class CommandExecutor {
     }
 
 
-    private bool ExecuteTravel(string commandName, Player player, Game gameInstance) {
+    public bool ExecuteTravel(string commandName, Player player, Game gameInstance) {
         switch (commandName.ToLower()) {
             case "1":
                 gameInstance.ChangeCurrentLocation(gameInstance.LosAngeles);
@@ -152,6 +152,6 @@ public class CommandExecutor {
         }
 
         return true;
-    }
+    } 
 }
         

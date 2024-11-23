@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj": {}
+    "C:\\Users\\manue\\Documents\\AA SDU\\C#\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj": {
+    "C:\\Users\\manue\\Documents\\AA SDU\\C#\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj",
+        "projectUniqueName": "C:\\Users\\manue\\Documents\\AA SDU\\C#\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj",
         "projectName": "WorldOfZuul",
-        "projectPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj",
-        "packagesPath": "C:\\Users\\valko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\obj\\",
+        "projectPath": "C:\\Users\\manue\\Documents\\AA SDU\\C#\\EcoTropolis\\EcoTropolis\\WorldOfZuul.csproj",
+        "packagesPath": "C:\\Users\\manue\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\manue\\Documents\\AA SDU\\C#\\EcoTropolis\\EcoTropolis\\obj\\",
+
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\valko\\AppData\\Roaming\\NuGet\\NuGet.Config"
+
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -59,6 +60,7 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+
         }
       }
     }
