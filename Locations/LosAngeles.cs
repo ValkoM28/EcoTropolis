@@ -100,15 +100,15 @@ public class LosAngeles : Location {
         }
         return true;
     }
-    public override void DisplayStartMessage() {
+     public override void DisplayStartMessage() {
         Console.WriteLine("""
-                          You find yourself in the bustling city of Manila, known for its rich history and vibrant culture. 
-                          However, the city is currently facing the aftermath of a devastating natural disaster. 
-                          As part of a pilot urban management project, your mission is to navigate through the city, 
-                          make critical decisions, and help rebuild and strengthen Manila’s resilience.
+                          Welcome to Los Angeles, a sprawling metropolis renowned for its innovation and diversity. 
+                          However, the city faces significant challenges, from urban sprawl and traffic congestion 
+                          to the looming threat of earthquakes. As part of an urban sustainability initiative, 
+                          your task is to navigate complex decisions and guide Los Angeles towards a more resilient and sustainable future.
                           
-                          Press Enter to continue...  
-                          """ );
+                          Press Enter to continue...
+                          """);
     }
     
     
