@@ -4,6 +4,7 @@ using System.Text.Json;
 using EcoTropolis.CommandLogic;
 using EcoTropolis.InventorySystem;
 
+
 namespace EcoTropolis.Locations
 {
     public class Barcelona : Location
@@ -18,6 +19,16 @@ namespace EcoTropolis.Locations
             _player = player;
         }
 
+        public override void DisplayStartMessage()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ShowDescription()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void Play()
         {
             DisplayStartMessage();
@@ -25,7 +36,7 @@ namespace EcoTropolis.Locations
 
             while (isPlaying)
             {
-                Console.WriteLine(messages["barcelona_intro"]);
+                Console.WriteLine(Messages["barcelona_intro"]);
                 string? input = Console.ReadLine()?.ToLower();
 
                 if (input == "train")
@@ -38,6 +49,11 @@ namespace EcoTropolis.Locations
                     Console.WriteLine();
                 }
             }
+        }
+
+        public override bool ExecuteCommand(Command command)
+        {
+            throw new NotImplementedException();
         }
 
         public void BarcelonaStart()
