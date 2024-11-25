@@ -27,7 +27,7 @@ public class SaoPaulo : Location {
         // Set a flag to keep the game loop running
         bool playing = true;
         // Create a parser instance with the command words, game, and current location
-        Parser parser = new(_game, this);
+        Parser parser = new( this);
 
         // Create an instance of CommandExecutor to handle commands
         // Game loop

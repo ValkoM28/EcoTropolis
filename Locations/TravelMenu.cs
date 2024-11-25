@@ -16,7 +16,7 @@ public class TravelMenu : Location {
     }
     
     public override void Play() {
-        Parser parser = new(_game, this);
+        Parser parser = new( this);
         
         bool playing = true;
         

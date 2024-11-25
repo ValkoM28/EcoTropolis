@@ -7,7 +7,7 @@ namespace EcoTropolis.Locations;
 
 public abstract class Location {
     public string Name { get; }
-    public string[] CommandWords { get; }
+    private string[] _commandWords { get; }
     
     
     //public Dictionary<string, Location> Exits { get; }

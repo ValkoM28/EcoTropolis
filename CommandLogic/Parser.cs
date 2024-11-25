@@ -3,12 +3,10 @@
 namespace EcoTropolis.CommandLogic; 
 
 public class Parser {
-    private Game _game;
     private Location _location; 
     
     // More efficient would be to use an int or short instead of a string, but we chose a string because it is a small program
-    public Parser(Game game, Location location) {
-        _game = game;
+    public Parser(Location location) {
         _location = location; 
     } 
     
@@ -24,13 +22,13 @@ public class Parser {
         }
         
         if (words.Length > 1) {
-            return new Command(_game, _location, words[0], words[1]);
+            return new Command(_location, words[0], words[1]);
         } 
 
-        return new Command(_game, _location, words[0]);  //TODO: check if that even works, correct syntax?
+        return new Command(_location, words[0]);  //TODO: check if that even works, correct syntax?
     }
 
-    public bool IsValidCommand(string input, string[] commandWords) {
+    private static bool IsValidCommand(string input, string[] commandWords) {
         return commandWords.Contains(input); 
     }
 }

@@ -5,11 +5,11 @@ using EcoTropolis.CommandLogic;
 namespace EcoTropolis.Locations;
 
 public class Manila : Location {
-    private Game _game; 
+    private readonly Game _game; 
     private Player _player;
-    private string[] _commandWords = ["1", "2", "3", "help"];
+    private readonly string[] _commandWords = ["1", "2", "3", "help"];
     
-    private List<DecisionPoint> _decisionPoints = new List<DecisionPoint>();
+    private readonly List<DecisionPoint> _decisionPoints = new List<DecisionPoint>();
     
     public Manila(Game game, Player player) : base("Manilla") {
         _player = player;
@@ -52,17 +52,16 @@ public class Manila : Location {
         DisplayStartMessage();
         Console.ReadLine(); 
         
-        Parser parser = new(_game, this);
+        Parser parser = new( this);
         
-        int i = 0; 
-        DecisionPoint currentDecisionPoint = _decisionPoints[i];
+        int i = 0;
+        DecisionPoint currentDecisionPoint; 
         
         while (true) {
             if (i == _decisionPoints.Count) {
                 break;  
             }
-            
-            
+            currentDecisionPoint = _decisionPoints[i]; 
             currentDecisionPoint.DisplayOptions();
             Console.Write("> ");
             
@@ -74,8 +73,7 @@ public class Manila : Location {
                 Console.ReadKey();
                 continue;
             }
-
-            currentDecisionPoint = _decisionPoints[i++];
+            i++;
             
         }
         _game.ChangeCurrentLocation(_game.TravelMenu);
@@ -119,8 +117,5 @@ public class Manila : Location {
         throw new NotImplementedException();
     }
     
-    
-    
-
 
 }
