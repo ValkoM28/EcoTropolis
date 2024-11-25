@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "VA6lSvK8xH8=",
+  "dgSpecHash": "us1PITl6DS4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\david\\EcoTropolis\\EcoTropolis-1\\EcoTropolis.csproj",
-=======
-  "dgSpecHash": "WwBBOCvrjR4=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis\\EcoTropolis.csproj",
->>>>>>> b69615283ec5f59de9f32a6f4da1413af4eb68b1
+  "projectFilePath": "C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\EcoTropolis.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\valko\\Documents\\UNI_Laptop\\EcoTropolis\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
