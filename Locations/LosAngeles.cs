@@ -17,7 +17,7 @@ public class LosAngeles : Location {
     }
 
     public override void Play() {
-        Parser parser = new(_game, this);
+        Parser parser = new( this);
 
         //CommandExecutor commandExecutor = new CommandExecutor(); 
         

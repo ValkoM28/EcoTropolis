@@ -15,6 +15,5 @@ public class Item {
         Price = price;
         Sellable = sellable; 
     }
-
 }
 

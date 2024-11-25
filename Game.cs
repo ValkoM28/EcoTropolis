@@ -34,14 +34,12 @@ public class Game {
 
     public Amsterdam Amsterdam { get; private set; }    
     
-    public SampleSpecificLocation Location { get; private set;  }
-     //boolean used to start and stop the game
      
     /*
      * The solemn purpose (at least for now) of the constructor of the Game class is to initialize all the locations of the game. 
      */
     public Game(string cityName) {
-        _player = new Player(new Inventory(this)); 
+        _player = new Player(new Inventory()); 
         CreateRooms(cityName);
     }
     

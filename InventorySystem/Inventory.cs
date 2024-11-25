@@ -19,15 +19,14 @@ public class Inventory {
      */
     public Dictionary<Item, short> Items = new Dictionary<Item, short>();
     public Dictionary<string, Item> References = new Dictionary<string, Item>();
-    private Game _gameInstance;
+    
     
     /*
      * TODO: Remove the test garbage from the constructor
      * Instantiating of Item objects in the inventory:
      * Item item = new Item(name:string, description:string, usage:string, price:short, sellable:bool[default true])
      */
-    public Inventory(Game game) {
-        _gameInstance = game;
+    public Inventory() {
         Item item = new Item("Showel", "Nice showel", "dig a hole", 500);
         Items.Add(item, 1);
         References.Add("showel", item);
@@ -63,7 +62,7 @@ public class Inventory {
         return false; 
     }
     
-    public bool CurrencySubtract(short money) {
+    private bool CurrencySubtract(short money) {
         short currentMoney = Items[References["money"]]; 
         
         if (currentMoney >= money) {
@@ -74,25 +73,26 @@ public class Inventory {
         return false; 
     }
 
-    public void CurrencyAdd(short money) {
+    private void CurrencyAdd(short money) {
         Items[References["money"]] += money; 
     }
 
-    public void SellItem(Item item, short price) {
-        if (item.Sellable) {
+    public bool SellItem(Item item) {
+        if (item.Sellable && Items.ContainsKey(item)) {
             Items.Remove(item); 
-            CurrencyAdd(price);
-        }
+            CurrencyAdd(item.Price);
+            return true; 
+        } 
+        return false; 
     }
 
-    public void SellItemByReference(string reference) {
-        if (References[reference].Sellable) {
+    public bool SellItemByReference(string reference) {
+        if (References[reference].Sellable && Items.ContainsKey(References[reference])) {
             CurrencyAdd(References[reference].Price);
             Items.Remove(References[reference]);
+            return true; 
         }
+        return false;
     }
-
-
-
-
+    
 }

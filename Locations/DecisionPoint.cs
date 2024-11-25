@@ -2,11 +2,11 @@
 
 public class DecisionPoint
 {
-    private string _name;
-    private string _description { get; }
+    private readonly string _name;
+    private readonly string _description;  
     private Dictionary<Option, int> _options { get; } = new Dictionary<Option, int>(); 
     
-    public DecisionPoint(string name, string description) {
+    internal DecisionPoint(string name, string description) {
         _name = name;
         _description = description;
     }
@@ -24,7 +24,6 @@ public class DecisionPoint
         foreach (var option in _options) {
             Console.WriteLine(++i + ". " + option.Key.Name + "\n" + option.Key.Description);
         }
-
     }
     
     private int GetOptionValue(int optionNumber) {

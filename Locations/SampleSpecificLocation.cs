@@ -17,7 +17,7 @@ public class SampleSpecificLocation : Location {
     }
 
     public override void Play() {
-        Parser parser = new(_game, this);
+        Parser parser = new( this);
 
          
         
@@ -29,16 +29,6 @@ public class SampleSpecificLocation : Location {
         while (playing) { //game happens
             string? input = Console.ReadLine();
             command = parser.GetCommand(input, _commandWords);
-            
-        /*
-         * commandExecutor.Execute() returns value true, when the command was valid and false, when it was not,
-         * if the command is not valid, print the invalid command message and try again.
-         
-            if (!commandExecutor.Execute(command, _player)) {
-                DisplayMessage("invalid_command");
-                Console.ReadKey();
-                continue;
-            }*/
             
             
             
