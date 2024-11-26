@@ -1,6 +1,7 @@
 using System.Xml;
 using static EcoTropolis.Messages.Messages;
 using EcoTropolis.CommandLogic;
+using EcoTropolis.InventorySystem;
 
 namespace EcoTropolis.Locations;
 
@@ -55,13 +56,13 @@ public class LosAngeles : Location {
         Parser parser = new(_game, this);
         
         int i = 0; 
-        DecisionPoint currentDecisionPoint = _decisionPoints[i];
-        
-        while (true) {
+        DecisionPoint currentDecisionPoint;
+
+        while (i < _decisionPoints.Count) {
             if (i == _decisionPoints.Count) {
                 break;  
             }
-            
+            currentDecisionPoint = _decisionPoints[i];
             
             currentDecisionPoint.DisplayOptions();
             Console.Write("> ");
@@ -74,11 +75,12 @@ public class LosAngeles : Location {
                 Console.ReadKey();
                 continue;
             }
-
-            currentDecisionPoint = _decisionPoints[i++];
+            i++;
+          
             
         }
         _game.ChangeCurrentLocation(_game.TravelMenu);
+        // set this location as not playable again
     }
 
     public override bool ExecuteCommand(Command command) {
@@ -118,6 +120,16 @@ public class LosAngeles : Location {
     {
         throw new NotImplementedException();
     }
+
+    public void CalculateItem()
+    {
+        //if (score < 3)
+        Item Windmill = new Item("Windmill", "Traditional Dutch Windmill", "This Windmill will bring your city a strong, ecological and resilient industry as well as an improvement in the economy.", 1000, true);
+        //else if (score > 4)
+        
+        //else if (score > 6)
+    }
+
     
     
     
