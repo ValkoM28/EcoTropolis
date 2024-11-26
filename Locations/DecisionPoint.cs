@@ -1,7 +1,6 @@
 ﻿namespace EcoTropolis.Locations;
 
-public class DecisionPoint
-{
+public class DecisionPoint {
     private readonly string _name;
     private readonly string _description;  
     private Dictionary<Option, int> _options { get; } = new Dictionary<Option, int>(); 

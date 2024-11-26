@@ -24,15 +24,13 @@ public class Amsterdam : Location
     DisplayStartMessage();
     bool playing = true;
 
-        while (playing)
-        {
+        while (playing) {
             string? input = Console.ReadLine();
-            if (input == "metro") 
-            {
+            if (input == "metro") {
                 Amsterdamcenter();
                 AmsterdamCommands = false;
-                while(AmsterdamCommands == false) //absolutely horrendous temporary code that we will rework
-                { 
+                while(AmsterdamCommands == false) {//absolutely horrendous temporary code that we will rework
+                 
                     Console.WriteLine("");
                     AmsterdamInputs.Input2 = Console.ReadLine();
                     Console.WriteLine("");
@@ -53,8 +51,7 @@ public class Amsterdam : Location
                         }
                 }
             }
-            else
-            {
+            else {
                 Console.WriteLine("Invalid command, please try again:");
                 Console.WriteLine("");
             }

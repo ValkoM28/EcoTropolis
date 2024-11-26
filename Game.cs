@@ -17,7 +17,7 @@ public class Game {
     /*
      * Placeholders for all the locations
      * TODO: Rework this as either a List or a Dictionary (or a HashMap)
-     */
+     */ 
     public TravelMenu TravelMenu { get; private set; }  //Instance of TravelMenu class, used by the CommandExecutor, to enable travel
     //Attributes of the TravelMenu class: TODO:to be implemented and put here
     public MainCity MainCity { get; private set; }  //Instance of MainCity class, holds player's main city and its properties
